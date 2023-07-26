@@ -5,7 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <form action="/artifact_db/insert" method="post">
+    <label>聖遺物の選択</label>
+    <select name="artifacts">
+      
+    </select>
+    <input type="submit" value="追加"/>
+  </form>
+  <ul>
+    <% for(let todo of todos){ %>
+      <li><span><%= todo %></span></li>
+    <% } %>
+  </ul>
   </body>
 </html>
