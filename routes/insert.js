@@ -1,24 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'TBdEAm3jKW&a',
-  database: 'genshin_db'
-});
 
 //ejsに渡すやつ
 router.get('/', function(req, res) {
+    const userId = req.session.userid;
+    const isAuth = Boolean(userId);
     res.render('insert', {
         title: 'Genshin DB',
+        isAuth: isAuth,
     });
 });
 
 //ejsから受け取ったやつを処理するやつ
 router.post('/', function (req, res) {
+    const userId = req.session.userid;
+    const isAuth = Boolean(userId);
+    
     const artifact_id = req.body.artifacts;
     const parts_id = req.body.parts;
     const mainop_id = req.body.mainop;
@@ -39,6 +37,7 @@ router.post('/', function (req, res) {
             console.log(err);
             res.render('index', {
                 title: 'Genshin DB',
+                isAuth: isAuth,
             });
         });
 });
