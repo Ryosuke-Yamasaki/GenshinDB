@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 //ejsに渡すやつ
 router.get('/', function(req, res) {
   connection.query(
-      `select * from artifactmyset;`,
+      `select * from artifact_myset;`,
       (error, results) => {
           console.log('error = ' + error);
           console.log(results);

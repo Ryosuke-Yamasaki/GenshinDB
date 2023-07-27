@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 router.get('/', function(req, res) {
     res.render('insert', {
         title: 'Genshin DB',
-      });
+    });
 });
 
 //ejsから受け取ったやつを処理するやつ
@@ -40,6 +40,7 @@ router.post('/', function(req, res) {
         `insert into artifact_myset (artifact_id, parts_id, mainop_id, substatus1, subnum1, substatus2, subnum2, substatus3, subnum3, substatus4, subnum4) values (${artifact_id}, ${parts_id}, ${mainop_id}, ${substatus1}, ${subnum1}, ${substatus2}, ${subnum2}, ${substatus3}, ${subnum3}, ${substatus4}, ${subnum4});`,
         (error, results) => {
             console.log(error);
+            console.log(results);
             res.redirect('/');
         }
     );
