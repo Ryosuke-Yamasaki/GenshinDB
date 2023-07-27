@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const knex = require('../db/knex');
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
@@ -11,22 +12,26 @@ const connection = mysql.createConnection({
 
 //ejsに渡すやつ
 router.get('/', function(req, res) {
-  connection.query(
-      `select * from artifact_myset;`,
-      (error, results) => {
-          console.log('error = ' + error);
-          console.log(results);
-          res.render('index', {
-              title: 'Genshin DB',
-              data: results,
-          });
-      }
-  )
+  knex("artifact_myset")
+    .select("*")
+    .then(function (results) {
+      console.log(results);
+      res.render('index', {
+        title: 'Genshin DB',
+        data: results,
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+      res.render('index', {
+        title: 'Genshin DB',
+      });
+    });
 });
 
 //ejsから受け取ったやつを処理するやつ
 router.post('/', function(req, res) {
-  res.render('index', { title: 'ToDo App' });
+  res.render('index', { title: 'Genshin DB' });
 });
 
 router.use('/insert', require('./insert'));
