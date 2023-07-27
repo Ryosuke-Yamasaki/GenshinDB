@@ -5,17 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-  <form action="/artifact_db/insert" method="post">
-    <label>聖遺物の選択</label>
-    <select name="artifacts">
-      
-    </select>
-    <input type="submit" value="追加"/>
-  </form>
-  <ul>
-    <% for(let todo of todos){ %>
-      <li><span><%= todo %></span></li>
-    <% } %>
-  </ul>
+    <%- include('./insert'); %>
+    <table border="1">
+      <% for(let row of data){ %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><%= row.artifact_id %></td>
+          <td><%= row.parts_id %></td>
+          <td><%= row.mainop_id %></td>
+          <td><%= row.substatus1 %></td>
+          <td><%= row.subnum1 %></td>
+          <td><%= row.substatus2 %></td>
+          <td><%= row.subnum2 %></td>
+          <td><%= row.substatus3 %></td>
+          <td><%= row.subnum3 %></td>
+          <td><%= row.substatus4 %></td>
+          <td><%= row.subnum4 %></td>
+        </tr>
+      <% } %>
+    </table>
   </body>
 </html>
