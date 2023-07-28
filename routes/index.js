@@ -42,7 +42,7 @@ router.post('/', function(req, res) {
   });
 });
 
-router.use('/insert', require('./insert'));
+router.use('/artifact_insert', require('./artifact_insert'));
 router.use('/signup', require('./signup'));
 router.use('/signin', require('./signin'));
 router.use('/logout', require('./logout'));
