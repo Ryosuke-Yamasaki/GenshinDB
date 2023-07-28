@@ -4,32 +4,38 @@ const knex = require('../db/knex');
 
 //ejsに渡すやつ
 router.get('/', function(req, res) {
-  const userId = req.session.userid;
-  const isAuth = Boolean(userId);
-
-  knex("artifact_myset")
-    .select("*")
-    .then(function (results) {
-      console.log(results);
-      res.render('index', {
-        title: 'Genshin DB',
-        data: results,
-        isAuth: isAuth,
+  const isAuth = req.isAuthenticated();
+  if (isAuth) {
+    const userId = req.user.id;
+    knex("artifact_myset")
+      .select("*")
+      .where({user_id: userId})
+      .then(function (results) {
+        console.log(results);
+        res.render('index', {
+          title: 'Genshin DB',
+          data: results,
+          isAuth: isAuth,
+        });
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.render('index', {
+          title: 'Genshin DB',
+          isAuth: isAuth,
+        });
       });
-    })
-    .catch(function (err) {
-      console.log(err);
-      res.render('index', {
-        title: 'Genshin DB',
-        isAuth: isAuth,
-      });
+  } else {
+    res.render('index', {
+      title: 'Genshin DB',
+      isAuth: isAuth,
     });
+  }
 });
 
 //ejsから受け取ったやつを処理するやつ
 router.post('/', function(req, res) {
-  const userId = req.session.userid;
-  const isAuth = Boolean(userId);
+  const isAuth = req.isAuthenticated();
   res.render('index', { 
     title: 'Genshin DB',
     isAuth: isAuth,
