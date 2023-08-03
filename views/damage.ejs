@@ -1,0 +1,690 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">キャラクター選択</div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-header">キャラクター</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="dropdown">
+                                                        <button
+                                                            class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap"
+                                                            type="button" id="constellation" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="constellation">
+                                                            <li><button class="dropdown-item text-nowrap"
+                                                                    type="submit">Lv.70a</button>
+                                                            </li>
+                                                            <li><button class="dropdown-item text-nowrap"
+                                                                    type="submit">Lv.80b</button>
+                                                            </li>
+                                                            <li><button class="dropdown-item text-nowrap"
+                                                                    type="submit">Lv.80a</button>
+                                                            </li>
+                                                            <li><button class="dropdown-item active text-nowrap"
+                                                                    type="submit">Lv.90</button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <button type="button"
+                                                        class="btn btn-outline-dark btn-sm text-nowrap"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#select_constellationModal">凸
+                                                    </button>
+                                                    <div class="modal" id="select_constellationModal" tabindex="-1"
+                                                        aria-labelledby="select_constellation" aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title"
+                                                                        id="select_constellationModal">命ノ星座</h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body d-grid">
+                                                                    <button type="submit">1</button>
+                                                                    <button type="submit">2</button>
+                                                                    <button type="submit">3</button>
+                                                                    <button type="submit">4</button>
+                                                                    <button type="submit">5</button>
+                                                                    <button type="submit">6</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                            data-bs-target="#select_characterModal">
+                                            <img src="images/Ganyu.webp" class="img-rounded" width="64" height="64">
+                                        </button>
+                                    </div>
+                                    <div class="modal" id="select_characterModal" tabindex="-1"
+                                        aria-labelledby="select_character" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="select_characterModal">キャラクター選択</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="btn-group">
+                                                                <button type="submit"
+                                                                    class="btn-info rounded-circle p-0" value="1">
+                                                                    <img src="images/Dehya.webp"
+                                                                        class="img-fluid rounded-circle p-0">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="2">
+                                                                    <img src="images/Yoimiya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                                <button type="submit" class="btn-info" value="1">
+                                                                    <img src="images/Dehya.webp" class="img-fluid">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row flex-nowrap align-items-center">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-header text-nowrap small">
+                                                通常</div>
+                                            <div class="dropdown" id="1">
+                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
+                                                    type="button" id="talents" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="talents">
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.1</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.2</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.3</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.4</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.5</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.6</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.7</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item active text-nowrap"
+                                                            type="submit">Lv.8</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.9</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.10</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-header text-nowrap small">
+                                                元素スキル</div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
+                                                    type="button" id="talents" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="talents">
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.1</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.2</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.3</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.4</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.5</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.6</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.7</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item active text-nowrap"
+                                                            type="submit">Lv.8</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.9</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.10</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-header text-nowrap small">
+                                                元素爆発</div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
+                                                    type="button" id="talents" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="talents">
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.1</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.2</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.3</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.4</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.5</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.6</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.7</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item active text-nowrap"
+                                                            type="submit">Lv.8</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.9</button>
+                                                    </li>
+                                                    <li><button class="dropdown-item text-nowrap"
+                                                            type="submit">Lv.10</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">ステータス</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap small">項目名</th>
+                                        <th scope="col" class="text-nowrap small">基礎値</th>
+                                        <th scope="col" class="text-nowrap small">追加値</th>
+                                        <th scope="col" class="text-nowrap small">合計値</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">HP</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">攻撃力</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">防御力</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">元素熟知</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">元素チャージ効率</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">会心率</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">会心ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">炎元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">水元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">氷元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">雷元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">風元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">岩元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">草元素ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">物理ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">受ける治療効果</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">与える治療効果</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">シールド強化</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">通常攻撃ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">重撃ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">落下攻撃ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">元素スキルダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">元素爆発ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">全ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">過負荷ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">燃焼ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">蒸発ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">溶解ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">超電導ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">拡散ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">感電ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">超激化ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">草激化ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">開花ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">烈開花ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">超開花ダメージ</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">炎元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">水元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">氷元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">雷元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">風元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">岩元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-nowrap small">草元素耐性</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">装備選択</div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-header">装備</div>
+                        <div class="container text-center">
+                            <div class="row row-cols-3">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        </div>
+                                        <div class="card-footer text-nowrap small">武器</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="card-footer text-nowrap small">花</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="card-footer text-nowrap small">羽</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="card-footer text-nowrap small">砂</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="card-footer text-nowrap small">杯</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="card-footer text-nowrap small">冠</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">ダメージ計算結果</div>
+            </div>
+        </div>
+    </div>
+</div>
