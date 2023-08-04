@@ -1,16 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">キャラクター選択</div>
-                <div class="card-body">
-                    <div class="card">
-                        <div class="card-header">キャラクター</div>
-                        <div class="card-body">
+        <div class="col-md">
+            <div class="container">
+                <div class="header rounded-top d-grid text-bg-dark">
+                    <div class="ms-2">キャラクター選択</div>
+                </div>
+                <div class="body border rounded-bottom">
+                    <div class="container">
+                        <div class="header rounded-top d-grid text-bg-dark">
+                            <div class="ms-2">キャラクター</div>
+                        </div>
+                        <div class="body border rounded-bottom p-2">
                             <div class="container">
-                                <div class="row align-items-center">
+                                <div class="row align-items-center flex-nowrap pb-1">
                                     <div class="col-8">
-                                        <div class="container">
+                                        <div class="container text-center">
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="dropdown">
@@ -48,7 +52,8 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title"
-                                                                        id="select_constellationModal">命ノ星座</h5>
+                                                                        id="select_constellationModal">
+                                                                        命ノ星座</h5>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal"
                                                                         aria-label="Close"></button>
@@ -68,132 +73,599 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                            data-bs-target="#select_characterModal">
-                                            <img src="images/Ganyu.webp" class="img-rounded" width="64" height="64">
-                                        </button>
-                                    </div>
-                                    <div class="modal" id="select_characterModal" tabindex="-1"
-                                        aria-labelledby="select_character" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="select_characterModal">キャラクター選択</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="container-fluid">
-                                                        <div class="row">
-                                                            <div class="btn-group">
-                                                                <button type="submit"
-                                                                    class="btn-info rounded-circle p-0" value="1">
-                                                                    <img src="images/Dehya.webp"
-                                                                        class="img-fluid rounded-circle p-0">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="2">
-                                                                    <img src="images/Yoimiya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
-                                                                <button type="submit" class="btn-info" value="1">
-                                                                    <img src="images/Dehya.webp" class="img-fluid">
-                                                                </button>
+                                    <div class="col-4">
+                                        <div class="container text-center">
+                                            <button type="button" class="btn btn-outline-dark p-0"
+                                                data-bs-toggle="modal" data-bs-target="#select_characterModal">
+                                                <img src="images/Ganyu.webp" class="img-rounded" width="64" height="64">
+                                            </button>
+                                            <div class="modal" id="select_characterModal" tabindex="-1"
+                                                aria-labelledby="select_character" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="select_characterModal">キャラクター選択
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="2">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="3">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col p-1">
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-secondary p-0"
+                                                                            value="1">
+                                                                            <img src="images/Dehya.webp"
+                                                                                class="img-fluid">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
-                                                            <div class="col"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -201,150 +673,146 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row flex-nowrap align-items-center">
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-header text-nowrap small">
-                                                通常</div>
-                                            <div class="dropdown" id="1">
-                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
-                                                    type="button" id="talents" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
+                            </div>
 
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="talents">
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.1</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.2</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.3</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.4</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.5</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.6</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.7</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item active text-nowrap"
-                                                            type="submit">Lv.8</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.9</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.10</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                            <div class="row align-items-center flex-nowrap">
+                                <div class="col">
+                                    <div class="container text-center">
+                                        <div class="dropdown" id="1">
+                                            <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap"
+                                                type="button" id="talents" data-bs-toggle="dropdown"
+                                                aria-expanded="false">通常
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="talents">
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.1</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.2</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.3</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.4</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.5</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.6</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.7</button>
+                                                </li>
+                                                <li><button class="dropdown-item active text-nowrap"
+                                                        type="submit">Lv.8</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.9</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.10</button>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-header text-nowrap small">
-                                                元素スキル</div>
-                                            <div class="dropdown">
-                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
-                                                    type="button" id="talents" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="talents">
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.1</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.2</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.3</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.4</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.5</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.6</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.7</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item active text-nowrap"
-                                                            type="submit">Lv.8</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.9</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.10</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                </div>
+                                <div class="col">
+                                    <div class="container text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap"
+                                                type="button" id="talents" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                元素スキル
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="talents">
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.1</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.2</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.3</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.4</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.5</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.6</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.7</button>
+                                                </li>
+                                                <li><button class="dropdown-item active text-nowrap"
+                                                        type="submit">Lv.8</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.9</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.10</button>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-header text-nowrap small">
-                                                元素爆発</div>
-                                            <div class="dropdown">
-                                                <button class="btn btn-outline-link dropdown-toggle btn-sm text-nowrap"
-                                                    type="button" id="talents" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="talents">
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.1</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.2</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.3</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.4</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.5</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.6</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.7</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item active text-nowrap"
-                                                            type="submit">Lv.8</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.9</button>
-                                                    </li>
-                                                    <li><button class="dropdown-item text-nowrap"
-                                                            type="submit">Lv.10</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                </div>
+                                <div class="col">
+                                    <div class="container text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap"
+                                                type="button" id="talents" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                元素爆発
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="talents">
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.1</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.2</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.3</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.4</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.5</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.6</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.7</button>
+                                                </li>
+                                                <li><button class="dropdown-item active text-nowrap"
+                                                        type="submit">Lv.8</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.9</button>
+                                                </li>
+                                                <li><button class="dropdown-item text-nowrap"
+                                                        type="submit">Lv.10</button>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">ステータス</div>
-                        <div class="card-body">
-                            <table class="table">
+                    <div class="container">
+                        <div class="header rounded-top d-grid text-bg-dark">
+                            <div class="ms-2">ステータス</div>
+                        </div>
+                        <div class="body border rounded-bottom p-2">
+                            <table class="table table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col" class="text-nowrap small">項目名</th>
@@ -618,73 +1086,73 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">装備選択</div>
-                <div class="card-body">
-                    <div class="card">
-                        <div class="card-header">装備</div>
-                        <div class="container text-center">
-                            <div class="row row-cols-3">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                        </div>
-                                        <div class="card-footer text-nowrap small">武器</div>
-                                    </div>
+    </div>
+</div>
+<div class="col-md">
+    <div class="container">
+        <div class="header">装備選択</div>
+        <div class="body">
+            <div class="container">
+                <div class="header">装備</div>
+                <div class="container text-center">
+                    <div class="row row-cols-3">
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
+                                <div class="footer text-nowrap small">武器</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
 
-                                        </div>
-                                        <div class="card-footer text-nowrap small">花</div>
-                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
+                                <div class="footer text-nowrap small">花</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
 
-                                        </div>
-                                        <div class="card-footer text-nowrap small">羽</div>
-                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
+                                <div class="footer text-nowrap small">羽</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
 
-                                        </div>
-                                        <div class="card-footer text-nowrap small">砂</div>
-                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
+                                <div class="footer text-nowrap small">砂</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
 
-                                        </div>
-                                        <div class="card-footer text-nowrap small">杯</div>
-                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
+                                <div class="footer text-nowrap small">杯</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="body">
 
-                                        </div>
-                                        <div class="card-footer text-nowrap small">冠</div>
-                                    </div>
                                 </div>
+                                <div class="footer text-nowrap small">冠</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">ダメージ計算結果</div>
-            </div>
-        </div>
+    </div>
+</div>
+<div class="col-md">
+    <div class="container">
+        <div class="header">ダメージ計算結果</div>
     </div>
 </div>
