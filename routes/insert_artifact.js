@@ -3,7 +3,7 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 //ejsに渡すやつ
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     const isAuth = req.isAuthenticated();
     res.render('insert', {
         title: 'Genshin DB',
@@ -27,7 +27,7 @@ router.post('/', function (req, res) {
     const substatus4 = req.body.subop4;
     const subnum4 = req.body.subnum4;
     knex("artifact_myset")
-        .insert({user_id: userId, artifact_id: artifact_id, parts_id: parts_id, mainop_id: mainop_id, substatus1: substatus1, subnum1:subnum1, substatus2:substatus2, subnum2:subnum2, substatus3:substatus3, subnum3:subnum3, substatus4:substatus4, subnum4:subnum4})
+        .insert({ user_id: userId, artifact_id: artifact_id, parts_id: parts_id, mainop_id: mainop_id, substatus1: substatus1, subnum1: subnum1, substatus2: substatus2, subnum2: subnum2, substatus3: substatus3, subnum3: subnum3, substatus4: substatus4, subnum4: subnum4 })
         .then(function () {
             res.redirect('/')
         })

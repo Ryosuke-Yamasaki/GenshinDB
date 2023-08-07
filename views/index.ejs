@@ -16,9 +16,9 @@
     <%- include('./error_messages'); %>
       <% if(isAuth) { %>
 
-        <%- include('./damage'); %>
+        <%- include('./main'); %>
 
-          <%- include('./artifact_insert'); %>
+          <%- include('./insert_artifact'); %>
             <table border="1">
               <% for(let row of data){ %>
                 <tr>
