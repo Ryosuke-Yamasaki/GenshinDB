@@ -12,26 +12,17 @@
             </div>
             <div class="body border rounded-bottom p-2">
               <div class="container">
-                <div class="row align-items-center flex-nowrap">
+                <div class="row align-items-center flex-nowrap p-1">
                   <div class="col-8">
                     <div class="container text-center">
                       <div class="row">
                         <div class="col">
-                          <div class="dropdown">
-                            <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap" type="button"
-                              data-bs-toggle="dropdown" aria-expanded="false">
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><button class="dropdown-item" type="submit">Lv.70a</button>
-                              </li>
-                              <li><button class="dropdown-item" type="submit">Lv.80b</button>
-                              </li>
-                              <li><button class="dropdown-item" type="submit">Lv.80a</button>
-                              </li>
-                              <li><button class="dropdown-item active" type="submit">Lv.90</button>
-                              </li>
-                            </ul>
-                          </div>
+                          <select class="form-select form-select-sm" aria-label="levelLabel">
+                            <option value="1">Lv.70a</option>
+                            <option value="2">Lv.80b</option>
+                            <option value="3">Lv.80a</option>
+                            <option value="4" selected>Lv.90</option>
+                          </select>
                         </div>
                         <div class="col">
                           <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
@@ -444,91 +435,48 @@
                     </div>
                   </div>
                 </div>
-                <div class="row align-items-center flex-nowrap">
-                  <div class="text-center">
-                    <div class="btn-group" role="group">
-                      <div class="dropdown">
-                        <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap m-2" type="button"
-                          id="talents_normal" data-bs-toggle="dropdown" aria-expanded="false">通常
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="talents_normal">
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.1</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.2</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.3</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.4</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.5</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.6</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.7</button>
-                          </li>
-                          <li><button class="dropdown-item active text-nowrap" type="submit">Lv.8</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.9</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.10</button>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="dropdown">
-                        <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap m-2" type="button"
-                          id="talents_elementalskill" data-bs-toggle="dropdown" aria-expanded="false">元素スキル
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="talents_elementalskill">
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.1</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.2</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.3</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.4</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.5</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.6</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.7</button>
-                          </li>
-                          <li><button class="dropdown-item active text-nowrap" type="submit">Lv.8</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.9</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.10</button>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="dropdown">
-                        <button class="btn btn-outline-dark dropdown-toggle btn-sm text-nowrap m-2" type="button"
-                          id="talents_elementalburst" data-bs-toggle="dropdown" aria-expanded="false">元素爆発
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="talents_elementalburst">
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.1</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.2</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.3</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.4</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.5</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.6</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.7</button>
-                          </li>
-                          <li><button class="dropdown-item active text-nowrap" type="submit">Lv.8</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.9</button>
-                          </li>
-                          <li><button class="dropdown-item text-nowrap" type="submit">Lv.10</button>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                <div class="row align-items-center flex-nowrap p-1">
+                  <div class="col p-1">
+                    <select class="form-select form-select-sm" aria-label="talents_normal">
+                      <option value="1">Lv.1</option>
+                      <option value="2">Lv.2</option>
+                      <option value="3">Lv.3</option>
+                      <option value="4">Lv.4</option>
+                      <option value="5">Lv.5</option>
+                      <option value="6">Lv.6</option>
+                      <option value="7">Lv.7</option>
+                      <option value="8" selected>Lv.8</option>
+                      <option value="9">Lv.9</option>
+                      <option value="10">Lv.10</option>
+                    </select>
+                  </div>
+                  <div class="col p-1">
+                    <select class="form-select form-select-sm" aria-label="talents_elementalskill">
+                      <option value="1">Lv.1</option>
+                      <option value="2">Lv.2</option>
+                      <option value="3">Lv.3</option>
+                      <option value="4">Lv.4</option>
+                      <option value="5">Lv.5</option>
+                      <option value="6">Lv.6</option>
+                      <option value="7">Lv.7</option>
+                      <option value="8" selected>Lv.8</option>
+                      <option value="9">Lv.9</option>
+                      <option value="10">Lv.10</option>
+                    </select>
+                  </div>
+                  <div class="col p-1">
+                    <select class="form-select form-select-sm" aria-label="talents_elementalburst">
+                      <option value="1">Lv.1</option>
+                      <option value="2">Lv.2</option>
+                      <option value="3">Lv.3</option>
+                      <option value="4">Lv.4</option>
+                      <option value="5">Lv.5</option>
+                      <option value="6">Lv.6</option>
+                      <option value="7">Lv.7</option>
+                      <option value="8" selected>Lv.8</option>
+                      <option value="9">Lv.9</option>
+                      <option value="10">Lv.10</option>
+                    </select>
                   </div>
                 </div>
               </div>
