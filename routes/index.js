@@ -6,10 +6,10 @@ const knex = require('../db/knex');
 router.get('/', function (req, res) {
   const isAuth = req.isAuthenticated();
   if (isAuth) {
-    const userId = req.user.id;
-    knex("artifact_myset")
+    const characterId = 31;
+    knex("character")
       .select("*")
-      .where({ user_id: userId })
+      .where({ id: characterId })
       .then(function (results) {
         console.log(results);
         res.render('index', {

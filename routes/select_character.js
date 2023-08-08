@@ -19,9 +19,31 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   const isAuth = req.isAuthenticated();
   const characterId = req.body.character;
-  const level = req.body.level;
-
-
+  if (isAuth) {
+    knex("character")
+      .select("*")
+      .where({ id: characterId })
+      .then(function (results) {
+        console.log(results);
+        res.render('index', {
+          title: 'Genshin DB',
+          data: results,
+          isAuth: isAuth,
+        });
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.render('index', {
+          title: 'Genshin DB',
+          isAuth: isAuth,
+        });
+      });
+  } else {
+    res.render('index', {
+      title: 'Genshin DB',
+      isAuth: isAuth,
+    });
+  }
 });
 
 module.exports = router;

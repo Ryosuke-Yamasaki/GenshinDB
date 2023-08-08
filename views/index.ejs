@@ -19,48 +19,6 @@
         <%- include('./main'); %>
 
           <%- include('./insert_artifact'); %>
-            <table border="1">
-              <% for(let row of data){ %>
-                <tr>
-                  <td>
-                    <%= row.id %>
-                  </td>
-                  <td>
-                    <%= row.artifact_id %>
-                  </td>
-                  <td>
-                    <%= row.parts_id %>
-                  </td>
-                  <td>
-                    <%= row.mainop_id %>
-                  </td>
-                  <td>
-                    <%= row.substatus1 %>
-                  </td>
-                  <td>
-                    <%= row.subnum1 %>
-                  </td>
-                  <td>
-                    <%= row.substatus2 %>
-                  </td>
-                  <td>
-                    <%= row.subnum2 %>
-                  </td>
-                  <td>
-                    <%= row.substatus3 %>
-                  </td>
-                  <td>
-                    <%= row.subnum3 %>
-                  </td>
-                  <td>
-                    <%= row.substatus4 %>
-                  </td>
-                  <td>
-                    <%= row.subnum4 %>
-                  </td>
-                </tr>
-                <% } %>
-            </table>
             <% } else { %>
               <h1>Welcome to the GenshinDB</h1>
               <a href="/signup">Sign up now!</a>

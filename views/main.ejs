@@ -8,7 +8,9 @@
         <div class="body border rounded-bottom p-2">
           <div class="container pb-2">
             <div class="header rounded-top d-grid text-bg-dark">
-              <div class="ms-2">キャラクター</div>
+              <div class="ms-2">
+                <%= data[0].name %>
+              </div>
             </div>
             <div class="body border rounded-bottom p-2">
               <div class="container">
@@ -17,7 +19,7 @@
                     <div class="container text-center">
                       <div class="row">
                         <div class="col p-1">
-                          <form action="/select_character" method="post">
+                          <form action="/select_level" method="post">
                             <select class="form-select form-select-sm p-1" aria-label="levelLabel" name="level"
                               onchange="this.form.submit()">
                               <option value="lv.70a">Lv.70a</option>
@@ -59,7 +61,7 @@
                     <div class="container text-center">
                       <button type="button" class="btn btn-outline-dark p-0" data-bs-toggle="modal"
                         data-bs-target="#select_characterModal">
-                        <img src="images/Ganyu.webp" class="img-rounded img-fluid">
+                        <img src="images/<%= data[0].name_en %>.webp" class="img-rounded img-fluid">
                       </button>
                       <div class="modal" id="select_characterModal" tabindex="-1" aria-labelledby="select_character"
                         aria-hidden="true">
