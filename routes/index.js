@@ -43,6 +43,8 @@ router.post('/', function (req, res) {
 });
 
 router.use('/insert_artifact', require('./insert_artifact'));
+router.use('/select_character', require('./select_character'));
+
 router.use('/signup', require('./signup'));
 router.use('/signin', require('./signin'));
 router.use('/logout', require('./logout'));

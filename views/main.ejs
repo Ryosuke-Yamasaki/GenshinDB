@@ -17,12 +17,15 @@
                     <div class="container text-center">
                       <div class="row">
                         <div class="col p-1">
-                          <select class="form-select form-select-sm p-1" aria-label="levelLabel">
-                            <option value="1">Lv.70a</option>
-                            <option value="2">Lv.80b</option>
-                            <option value="3">Lv.80a</option>
-                            <option value="4" selected>Lv.90</option>
-                          </select>
+                          <form action="/select_character" method="post">
+                            <select class="form-select form-select-sm p-1" aria-label="levelLabel" name="level"
+                              onchange="this.form.submit()">
+                              <option value="lv.70a">Lv.70a</option>
+                              <option value="lv.80b">Lv.80b</option>
+                              <option value="lv.80a">Lv.80a</option>
+                              <option value="lv.90" selected>Lv.90</option>
+                            </select>
+                          </form>
                         </div>
                         <div class="col p-1">
                           <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
@@ -69,366 +72,438 @@
                                 aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              <form action="/character" method="post"></form>
-                              <div class="container-fluid">
-                                <div class="row row-cols-6">
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="67">
-                                      <img src="images/Dehya.webp" class="img-fluid" alt="ディシア">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="39">
-                                      <img src="images/Yoimiya.webp" class="img-fluid" alt="宵宮">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="33">
-                                      <img src="images/Hu_Tao.webp" class="img-fluid" alt="胡桃">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="25">
-                                      <img src="images/Klee.webp" class="img-fluid" alt="クレー">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="6">
-                                      <img src="images/Diluc.webp" class="img-fluid" alt="ディルック">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="45">
-                                      <img src="images/Thoma.webp" class="img-fluid" alt="トーマ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="35">
-                                      <img src="images/Yanfei.webp" class="img-fluid" alt="煙緋">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="29">
-                                      <img src="images/Xinyan.webp" class="img-fluid" alt="辛炎">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="10">
-                                      <img src="images/Bennett.webp" class="img-fluid" alt="ベネット">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="22">
-                                      <img src="images/Xiangling.webp" class="img-fluid" alt="香菱">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="17">
-                                      <img src="images/Amber.webp" class="img-fluid" alt="アンバー">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="60">
-                                      <img src="images/Nilou.webp" class="img-fluid" alt="ニィロウ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="52">
-                                      <img src="images/Yelan.webp" class="img-fluid" alt="夜蘭">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="51">
-                                      <img src="images/Kamisato_Ayato.webp" class="img-fluid" alt="神里綾人">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="44">
-                                      <img src="images/Sangonomiya_Kokomi.webp" class="img-fluid" alt="珊瑚宮心海">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="26">
-                                      <img src="images/Tartaglia.webp" class="img-fluid" alt="タルタリヤ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="7">
-                                      <img src="images/Mona.webp" class="img-fluid" alt="モナ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="59">
-                                      <img src="images/Candace.webp" class="img-fluid" alt="キャンディス">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="19">
-                                      <img src="images/Xingqiu.webp" class="img-fluid" alt="行秋">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="14">
-                                      <img src="images/Barbara.webp" class="img-fluid" alt="バーバラ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="48">
-                                      <img src="images/Shenhe.webp" class="img-fluid" alt="申鶴">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="41">
-                                      <img src="images/Aloy.webp" class="img-fluid" alt="アーロイ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="38">
-                                      <img src="images/Kamisato_Ayaka.webp" class="img-fluid" alt="神里綾華">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="36">
-                                      <img src="images/Eula.webp" class="img-fluid" alt="エウルア">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="31">
-                                      <img src="images/Ganyu.webp" class="img-fluid" alt="甘雨">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="9">
-                                      <img src="images/Qiqi.webp" class="img-fluid" alt="七七">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="68">
-                                      <img src="images/Mika.webp" class="img-fluid" alt="ミカ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="62">
-                                      <img src="images/Layla.webp" class="img-fluid" alt="レイラ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="34">
-                                      <img src="images/Rosaria.webp" class="img-fluid" alt="ロサリア">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="27">
-                                      <img src="images/Diona.webp" class="img-fluid" alt="ディオナ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="21">
-                                      <img src="images/Chongyun.webp" class="img-fluid" alt="重雲">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="11">
-                                      <img src="images/Kaeya.webp" class="img-fluid" alt="ガイア">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="58">
-                                      <img src="images/Cyno.webp" class="img-fluid" alt="セノ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="50">
-                                      <img src="images/Yae_Miko.webp" class="img-fluid" alt="八重神子">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="42">
-                                      <img src="images/Raiden_Shogun.webp" class="img-fluid" alt="雷電将軍">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="8">
-                                      <img src="images/Keqing.webp" class="img-fluid" alt="刻晴">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="57">
-                                      <img src="images/Dori.webp" class="img-fluid" alt="ドリー">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="53">
-                                      <img src="images/Kuki_Shinobu.webp" class="img-fluid" alt="久岐忍">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="43">
-                                      <img src="images/Kujou_Sara.webp" class="img-fluid" alt="九条裟羅">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="18">
-                                      <img src="images/Fischl.webp" class="img-fluid" alt="フィッシュル">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="20">
-                                      <img src="images/Beidou.webp" class="img-fluid" alt="北斗">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="12">
-                                      <img src="images/Razor.webp" class="img-fluid" alt="レザー">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="16">
-                                      <img src="images/Lisa.webp" class="img-fluid" alt="リサ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="3">
-                                      <img src="images/Traveler.webp" class="img-fluid" alt="旅人（雷）">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="63">
-                                      <img src="images/Wanderer.webp" class="img-fluid" alt="放浪者">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="37">
-                                      <img src="images/Kaedehara_Kazuha.webp" class="img-fluid" alt="楓原万葉">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="32">
-                                      <img src="images/Xiao.webp" class="img-fluid" alt="魈">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="24">
-                                      <img src="images/Venti.webp" class="img-fluid" alt="ウェンティ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="5">
-                                      <img src="images/Jean.webp" class="img-fluid" alt="ジン">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="64">
-                                      <img src="images/Faruzan.webp" class="img-fluid" alt="ファルザン">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="54">
-                                      <img src="images/Shikanoin_Heizou.webp" class="img-fluid" alt="鹿野院平蔵">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="40">
-                                      <img src="images/Sayu.webp" class="img-fluid" alt="早柚">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="15">
-                                      <img src="images/Sucrose.webp" class="img-fluid" alt="スクロース">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="1">
-                                      <img src="images/Traveler.webp" class="img-fluid" alt="旅人（風）">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="46">
-                                      <img src="images/Arataki_Itto.webp" class="img-fluid" alt="荒瀧一斗">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="30">
-                                      <img src="images/Albedo.webp" class="img-fluid" alt="アルベド">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="28">
-                                      <img src="images/Zhongli.webp" class="img-fluid" alt="鍾離">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="49">
-                                      <img src="images/Yun_Jin.webp" class="img-fluid" alt="雲菫">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="47">
-                                      <img src="images/Gorou.webp" class="img-fluid" alt="ゴロー">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="13">
-                                      <img src="images/Noelle.webp" class="img-fluid" alt="ノエル">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="23">
-                                      <img src="images/Ningguang.webp" class="img-fluid" alt="凝光">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="2">
-                                      <img src="images/Traveler.webp" class="img-fluid" alt="旅人（岩）">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="69">
-                                      <img src="images/Baizhu.webp" class="img-fluid" alt="白朮">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="65">
-                                      <img src="images/Alhaitham.webp" class="img-fluid" alt="アルハイゼン">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="61">
-                                      <img src="images/Nahida.webp" class="img-fluid" alt="ナヒーダ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="55">
-                                      <img src="images/Tighnari.webp" class="img-fluid" alt="ティナリ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="71">
-                                      <img src="images/Kirara.webp" class="img-fluid" alt="綺良々">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="70">
-                                      <img src="images/Kaveh.webp" class="img-fluid" alt="カーヴェ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="66">
-                                      <img src="images/Yaoyao.webp" class="img-fluid" alt="ヨォーヨ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="56">
-                                      <img src="images/Collei.webp" class="img-fluid" alt="コレイ">
-                                    </button>
-                                  </div>
-                                  <div class="col p-1">
-                                    <button type="submit" class="btn btn-outline-secondary p-0" value="4">
-                                      <img src="images/Traveler.webp" class="img-fluid" alt="旅人（草）">
-                                    </button>
+                              <form action="/select_character" method="post">
+                                <div class="container-fluid">
+                                  <div class="row row-cols-6">
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="67">
+                                        <img src="images/Dehya.webp" class="img-fluid" alt="ディシア">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="39">
+                                        <img src="images/Yoimiya.webp" class="img-fluid" alt="宵宮">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="33">
+                                        <img src="images/Hu_Tao.webp" class="img-fluid" alt="胡桃">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="25">
+                                        <img src="images/Klee.webp" class="img-fluid" alt="クレー">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="6">
+                                        <img src="images/Diluc.webp" class="img-fluid" alt="ディルック">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="45">
+                                        <img src="images/Thoma.webp" class="img-fluid" alt="トーマ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="35">
+                                        <img src="images/Yanfei.webp" class="img-fluid" alt="煙緋">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="29">
+                                        <img src="images/Xinyan.webp" class="img-fluid" alt="辛炎">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="10">
+                                        <img src="images/Bennett.webp" class="img-fluid" alt="ベネット">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="22">
+                                        <img src="images/Xiangling.webp" class="img-fluid" alt="香菱">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="17">
+                                        <img src="images/Amber.webp" class="img-fluid" alt="アンバー">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="60">
+                                        <img src="images/Nilou.webp" class="img-fluid" alt="ニィロウ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="52">
+                                        <img src="images/Yelan.webp" class="img-fluid" alt="夜蘭">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="51">
+                                        <img src="images/Kamisato_Ayato.webp" class="img-fluid" alt="神里綾人">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="44">
+                                        <img src="images/Sangonomiya_Kokomi.webp" class="img-fluid" alt="珊瑚宮心海">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="26">
+                                        <img src="images/Tartaglia.webp" class="img-fluid" alt="タルタリヤ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="7">
+                                        <img src="images/Mona.webp" class="img-fluid" alt="モナ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="59">
+                                        <img src="images/Candace.webp" class="img-fluid" alt="キャンディス">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="19">
+                                        <img src="images/Xingqiu.webp" class="img-fluid" alt="行秋">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="14">
+                                        <img src="images/Barbara.webp" class="img-fluid" alt="バーバラ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="48">
+                                        <img src="images/Shenhe.webp" class="img-fluid" alt="申鶴">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="41">
+                                        <img src="images/Aloy.webp" class="img-fluid" alt="アーロイ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="38">
+                                        <img src="images/Kamisato_Ayaka.webp" class="img-fluid" alt="神里綾華">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="36">
+                                        <img src="images/Eula.webp" class="img-fluid" alt="エウルア">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="31">
+                                        <img src="images/Ganyu.webp" class="img-fluid" alt="甘雨">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="9">
+                                        <img src="images/Qiqi.webp" class="img-fluid" alt="七七">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="68">
+                                        <img src="images/Mika.webp" class="img-fluid" alt="ミカ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="62">
+                                        <img src="images/Layla.webp" class="img-fluid" alt="レイラ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="34">
+                                        <img src="images/Rosaria.webp" class="img-fluid" alt="ロサリア">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="27">
+                                        <img src="images/Diona.webp" class="img-fluid" alt="ディオナ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="21">
+                                        <img src="images/Chongyun.webp" class="img-fluid" alt="重雲">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="11">
+                                        <img src="images/Kaeya.webp" class="img-fluid" alt="ガイア">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="58">
+                                        <img src="images/Cyno.webp" class="img-fluid" alt="セノ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="50">
+                                        <img src="images/Yae_Miko.webp" class="img-fluid" alt="八重神子">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="42">
+                                        <img src="images/Raiden_Shogun.webp" class="img-fluid" alt="雷電将軍">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="8">
+                                        <img src="images/Keqing.webp" class="img-fluid" alt="刻晴">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="57">
+                                        <img src="images/Dori.webp" class="img-fluid" alt="ドリー">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="53">
+                                        <img src="images/Kuki_Shinobu.webp" class="img-fluid" alt="久岐忍">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="43">
+                                        <img src="images/Kujou_Sara.webp" class="img-fluid" alt="九条裟羅">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="18">
+                                        <img src="images/Fischl.webp" class="img-fluid" alt="フィッシュル">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="20">
+                                        <img src="images/Beidou.webp" class="img-fluid" alt="北斗">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="12">
+                                        <img src="images/Razor.webp" class="img-fluid" alt="レザー">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="16">
+                                        <img src="images/Lisa.webp" class="img-fluid" alt="リサ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="3">
+                                        <img src="images/Traveler.webp" class="img-fluid" alt="旅人（雷）">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="63">
+                                        <img src="images/Wanderer.webp" class="img-fluid" alt="放浪者">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="37">
+                                        <img src="images/Kaedehara_Kazuha.webp" class="img-fluid" alt="楓原万葉">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="32">
+                                        <img src="images/Xiao.webp" class="img-fluid" alt="魈">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="24">
+                                        <img src="images/Venti.webp" class="img-fluid" alt="ウェンティ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="5">
+                                        <img src="images/Jean.webp" class="img-fluid" alt="ジン">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="64">
+                                        <img src="images/Faruzan.webp" class="img-fluid" alt="ファルザン">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="54">
+                                        <img src="images/Shikanoin_Heizou.webp" class="img-fluid" alt="鹿野院平蔵">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="40">
+                                        <img src="images/Sayu.webp" class="img-fluid" alt="早柚">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="15">
+                                        <img src="images/Sucrose.webp" class="img-fluid" alt="スクロース">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="1">
+                                        <img src="images/Traveler.webp" class="img-fluid" alt="旅人（風）">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="46">
+                                        <img src="images/Arataki_Itto.webp" class="img-fluid" alt="荒瀧一斗">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="30">
+                                        <img src="images/Albedo.webp" class="img-fluid" alt="アルベド">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="28">
+                                        <img src="images/Zhongli.webp" class="img-fluid" alt="鍾離">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="49">
+                                        <img src="images/Yun_Jin.webp" class="img-fluid" alt="雲菫">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="47">
+                                        <img src="images/Gorou.webp" class="img-fluid" alt="ゴロー">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="13">
+                                        <img src="images/Noelle.webp" class="img-fluid" alt="ノエル">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="23">
+                                        <img src="images/Ningguang.webp" class="img-fluid" alt="凝光">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="2">
+                                        <img src="images/Traveler.webp" class="img-fluid" alt="旅人（岩）">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="69">
+                                        <img src="images/Baizhu.webp" class="img-fluid" alt="白朮">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="65">
+                                        <img src="images/Alhaitham.webp" class="img-fluid" alt="アルハイゼン">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="61">
+                                        <img src="images/Nahida.webp" class="img-fluid" alt="ナヒーダ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="55">
+                                        <img src="images/Tighnari.webp" class="img-fluid" alt="ティナリ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="71">
+                                        <img src="images/Kirara.webp" class="img-fluid" alt="綺良々">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="70">
+                                        <img src="images/Kaveh.webp" class="img-fluid" alt="カーヴェ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="66">
+                                        <img src="images/Yaoyao.webp" class="img-fluid" alt="ヨォーヨ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="56">
+                                        <img src="images/Collei.webp" class="img-fluid" alt="コレイ">
+                                      </button>
+                                    </div>
+                                    <div class="col p-1">
+                                      <button type="submit" class="btn btn-outline-secondary p-0" name="character"
+                                        value="4">
+                                        <img src="images/Traveler.webp" class="img-fluid" alt="旅人（草）">
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
+                              </form>
                             </div>
                           </div>
                         </div>
