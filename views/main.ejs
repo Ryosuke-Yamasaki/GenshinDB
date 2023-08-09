@@ -9,7 +9,7 @@
           <div class="container pb-2">
             <div class="header rounded-top d-grid text-bg-dark">
               <div class="ms-2">
-                <%= data[0].name %>
+                <%= characters[0].name %>
               </div>
             </div>
             <div class="body border rounded-bottom p-2">
@@ -20,12 +20,12 @@
                       <div class="row">
                         <div class="col p-1">
                           <form action="/select_level" method="post">
-                            <select class="form-select form-select-sm p-1" aria-label="levelLabel" name="level"
-                              onchange="this.form.submit()">
-                              <option value="lv.70a">Lv.70a</option>
-                              <option value="lv.80b">Lv.80b</option>
-                              <option value="lv.80a">Lv.80a</option>
-                              <option value="lv.90" selected>Lv.90</option>
+                            <select class="form-select form-select-sm p-1" aria-label="characterlevelLabel"
+                              name="characterlevel" id="characterlevel" onchange="submit(this.form)">
+                              <option value="level_70a">Lv.70a</option>
+                              <option value="level_80b">Lv.80b</option>
+                              <option value="level_80a">Lv.80a</option>
+                              <option value="level_90" selected>Lv.90</option>
                             </select>
                           </form>
                         </div>
@@ -61,7 +61,9 @@
                     <div class="container text-center">
                       <button type="button" class="btn btn-outline-dark p-0" data-bs-toggle="modal"
                         data-bs-target="#select_characterModal">
-                        <img src="images/<%= data[0].name_en %>.webp" class="img-rounded img-fluid">
+                        <% for ( let character of characters) { %>
+                          <img src="images/<%= characters[0].name_en %>.webp" class="img-rounded img-fluid">
+                          <% } %>
                       </button>
                       <div class="modal" id="select_characterModal" tabindex="-1" aria-labelledby="select_character"
                         aria-hidden="true">
@@ -565,7 +567,7 @@
             <div class="header rounded-top d-grid text-bg-dark">
               <div class="ms-2">ステータス</div>
             </div>
-            <div class="body border rounded-bottom p-2">
+            <div class="body border rounded-bottom p-2 text-center">
               <table class="table table-sm">
                 <thead>
                   <tr>
@@ -578,19 +580,49 @@
                 <tbody>
                   <tr>
                     <th scope="row" class="text-nowrap small">HP</th>
-                    <td></td>
+                    <td>
+                      <% if (levels[0].level_90) { %>
+                        <%= levels[0].level_90 %>
+                          <% } else if (levels[0].level_80a) { %>
+                            <%= levels[0].level_80a %>
+                              <% } else if (levels[0].level_80b) { %>
+                                <%= levels[0].level_80b %>
+                                  <% } else if (levels[0].level_70a) { %>
+                                    <%= levels[0].level_70a %>
+                                      <% } %>
+                    </td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-nowrap small">攻撃力</th>
-                    <td></td>
+                    <td>
+                      <% if (levels[2].level_90) { %>
+                        <%= levels[2].level_90 %>
+                          <% } else if (levels[2].level_80a) { %>
+                            <%= levels[2].level_80a %>
+                              <% } else if (levels[2].level_80b) { %>
+                                <%= levels[2].level_80b %>
+                                  <% } else if (levels[2].level_70a) { %>
+                                    <%= levels[2].level_70a %>
+                                      <% } %>
+                    </td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row" class="text-nowrap small">防御力</th>
-                    <td></td>
+                    <td>
+                      <% if (levels[1].level_90) { %>
+                        <%= levels[1].level_90 %>
+                          <% } else if (levels[1].level_80a) { %>
+                            <%= levels[1].level_80a %>
+                              <% } else if (levels[1].level_80b) { %>
+                                <%= levels[1].level_80b %>
+                                  <% } else if (levels[1].level_70a) { %>
+                                    <%= levels[1].level_70a %>
+                                      <% } %>
+                    </td>
                     <td></td>
                     <td></td>
                   </tr>
