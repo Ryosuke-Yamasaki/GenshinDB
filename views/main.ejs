@@ -43,12 +43,16 @@
                                     aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body d-grid">
-                                  <button type="submit">1</button>
-                                  <button type="submit">2</button>
-                                  <button type="submit">3</button>
-                                  <button type="submit">4</button>
-                                  <button type="submit">5</button>
-                                  <button type="submit">6</button>
+                                  <% for (let constellation of constellations ) { %>
+                                    <button type="submit">
+                                      <div class="header">
+                                        <%= constellation.name %>
+                                      </div>
+                                      <div class="body">
+                                        <%= constellation.effect %>
+                                      </div>
+                                    </button>
+                                    <% } %>
                                 </div>
                               </div>
                             </div>
