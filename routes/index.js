@@ -12,6 +12,7 @@ router.get('/', function (req, res) {
     const talentselementalskill = "level_8";
     const talentselementalburst = "level_8";
     const weaponsId = 115;
+    const refinementId = "r1";
     knex("character")
       .select("*")
       .where({ id: characterId })
@@ -52,18 +53,32 @@ router.get('/', function (req, res) {
                                   .where({ id: weaponsId })
                                   .then(function (results8) {
                                     console.log(results8);
-                                    res.render('index', {
-                                      title: 'Genshin DB',
-                                      characters: results1,
-                                      levels: results2,
-                                      talents_normal: results3,
-                                      talents_elementalslill: results4,
-                                      talents_elementalburst: results5,
-                                      passives: results6,
-                                      constellations: results7,
-                                      weapons: results8,
-                                      isAuth: isAuth,
-                                    });
+                                    knex("refinement")
+                                      .select("status_id", refinementId)
+                                      .where({ weapons_id: weaponsId })
+                                      .then(function (results9) {
+                                        console.log(results9);
+                                        res.render('index', {
+                                          title: 'Genshin DB',
+                                          characters: results1,
+                                          levels: results2,
+                                          talents_normal: results3,
+                                          talents_elementalslill: results4,
+                                          talents_elementalburst: results5,
+                                          passives: results6,
+                                          constellations: results7,
+                                          weapons: results8,
+                                          refinements: results9,
+                                          isAuth: isAuth,
+                                        });
+                                      })
+                                      .catch(function (err) {
+                                        console.log(err);
+                                        res.render('index', {
+                                          title: 'Genshin DB',
+                                          isAuth: isAuth,
+                                        });
+                                      });
                                   })
                                   .catch(function (err) {
                                     console.log(err);
