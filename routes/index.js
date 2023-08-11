@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
     const talentselementalburst = "level_8";
     const weaponsId = 115;
     const refinementId = "r1";
+    const artifactId = 1;
     knex("character")
       .select("*")
       .where({ id: characterId })
@@ -49,7 +50,7 @@ router.get('/', function (req, res) {
                               .then(function (results7) {
                                 console.log(results7);
                                 knex("weapons")
-                                  .select("name", "name_en", "atk", "status_id", "num")
+                                  .select("*")
                                   .where({ id: weaponsId })
                                   .then(function (results8) {
                                     console.log(results8);
@@ -58,19 +59,89 @@ router.get('/', function (req, res) {
                                       .where({ weapons_id: weaponsId })
                                       .then(function (results9) {
                                         console.log(results9);
-                                        res.render('index', {
-                                          title: 'Genshin DB',
-                                          characters: results1,
-                                          levels: results2,
-                                          talents_normal: results3,
-                                          talents_elementalslill: results4,
-                                          talents_elementalburst: results5,
-                                          passives: results6,
-                                          constellations: results7,
-                                          weapons: results8,
-                                          refinements: results9,
-                                          isAuth: isAuth,
-                                        });
+                                        knex("artifact")
+                                          .select("*")
+                                          .where({ id: artifactId })
+                                          .then(function (results10) {
+                                            console.log(results10);
+                                            knex("artifact")
+                                              .select("*")
+                                              .where({ id: artifactId })
+                                              .then(function (results11) {
+                                                console.log(results11);
+                                                knex("artifact")
+                                                  .select("*")
+                                                  .where({ id: artifactId })
+                                                  .then(function (results12) {
+                                                    console.log(results12);
+                                                    knex("artifact")
+                                                      .select("*")
+                                                      .where({ id: artifactId })
+                                                      .then(function (results13) {
+                                                        console.log(results13);
+                                                        knex("artifact")
+                                                          .select("*")
+                                                          .where({ id: artifactId })
+                                                          .then(function (results14) {
+                                                            console.log(results14);
+                                                            res.render('index', {
+                                                              title: 'Genshin DB',
+                                                              characters: results1,
+                                                              levels: results2,
+                                                              talents_normal: results3,
+                                                              talents_elementalslill: results4,
+                                                              talents_elementalburst: results5,
+                                                              passives: results6,
+                                                              constellations: results7,
+                                                              weapons: results8,
+                                                              refinements: results9,
+                                                              flowers: results10,
+                                                              plumes: results11,
+                                                              sands: results12,
+                                                              goblets: results13,
+                                                              circlets: results14,
+                                                              isAuth: isAuth,
+                                                            });
+                                                          })
+                                                          .catch(function (err) {
+                                                            console.log(err);
+                                                            res.render('index', {
+                                                              title: 'Genshin DB',
+                                                              isAuth: isAuth,
+                                                            });
+                                                          });
+                                                      })
+                                                      .catch(function (err) {
+                                                        console.log(err);
+                                                        res.render('index', {
+                                                          title: 'Genshin DB',
+                                                          isAuth: isAuth,
+                                                        });
+                                                      });
+                                                  })
+                                                  .catch(function (err) {
+                                                    console.log(err);
+                                                    res.render('index', {
+                                                      title: 'Genshin DB',
+                                                      isAuth: isAuth,
+                                                    });
+                                                  });
+                                              })
+                                              .catch(function (err) {
+                                                console.log(err);
+                                                res.render('index', {
+                                                  title: 'Genshin DB',
+                                                  isAuth: isAuth,
+                                                });
+                                              });
+                                          })
+                                          .catch(function (err) {
+                                            console.log(err);
+                                            res.render('index', {
+                                              title: 'Genshin DB',
+                                              isAuth: isAuth,
+                                            });
+                                          });
                                       })
                                       .catch(function (err) {
                                         console.log(err);
