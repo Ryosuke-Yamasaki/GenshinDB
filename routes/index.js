@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
     const talentsnormal = "level_8";
     const talentselementalskill = "level_8";
     const talentselementalburst = "level_8";
+    const weaponsId = 115;
     knex("character")
       .select("*")
       .where({ id: characterId })
@@ -46,17 +47,31 @@ router.get('/', function (req, res) {
                               .where({ character_id: characterId })
                               .then(function (results7) {
                                 console.log(results7);
-                                res.render('index', {
-                                  title: 'Genshin DB',
-                                  characters: results1,
-                                  levels: results2,
-                                  talents_normal: results3,
-                                  talents_elementalslill: results4,
-                                  talents_elementalburst: results5,
-                                  passives: results6,
-                                  constellations: results7,
-                                  isAuth: isAuth,
-                                });
+                                knex("weapons")
+                                  .select("name", "name_en", "atk", "status_id", "num")
+                                  .where({ id: weaponsId })
+                                  .then(function (results8) {
+                                    console.log(results8);
+                                    res.render('index', {
+                                      title: 'Genshin DB',
+                                      characters: results1,
+                                      levels: results2,
+                                      talents_normal: results3,
+                                      talents_elementalslill: results4,
+                                      talents_elementalburst: results5,
+                                      passives: results6,
+                                      constellations: results7,
+                                      weapons: results8,
+                                      isAuth: isAuth,
+                                    });
+                                  })
+                                  .catch(function (err) {
+                                    console.log(err);
+                                    res.render('index', {
+                                      title: 'Genshin DB',
+                                      isAuth: isAuth,
+                                    });
+                                  });
                               })
                               .catch(function (err) {
                                 console.log(err);
