@@ -17,7 +17,7 @@
                 <div class="row align-items-center p-1">
                   <div class="col-8">
                     <div class="container text-center">
-                      <div class="row">
+                      <div class="row align-items-center">
                         <div class="col p-1">
                           <form action="/select_level" method="post">
                             <div id="characterlevel" class="form-text text-start" style="font-size: 0.1rem;">キャラクターレベル</div>
@@ -517,8 +517,348 @@
             <div class="header rounded-top d-grid text-bg-dark">
               <div class="ms-2">ステータス</div>
             </div>
-            <div class="body border rounded-bottom p-2 text-center">
-              <%- include('./base_status'); %>
+            <div class="body border rounded-bottom p-2">
+              <% let base_hp %>
+              <% let base_atk %>
+              <% let base_def %>
+              <% let base_status %>
+              <% if (levels[0].level_70a) { %>
+              <% base_hp=levels[0].level_70a %>
+              <% base_def=levels[1].level_70a %>
+              <% base_atk=levels[2].level_70a %>
+              <% base_status=levels[3].level_70a %>
+              <% } else if (levels[0].level_80b) { %>
+              <% base_hp=levels[0].level_80b %>
+              <% base_def=levels[1].level_80b %>
+              <% base_atk=levels[2].level_80b %>
+              <% base_status=levels[3].level_80b %>
+              <% } else if (levels[0].level_80a) { %>
+              <% base_hp=levels[0].level_80a %>
+              <% base_def=levels[1].level_80a %>
+              <% base_atk=levels[2].level_80a %>
+              <% base_status=levels[3].level_80a %>
+              <% } else if (levels[0].level_90) { %>
+              <% base_hp=levels[0].level_90 %>
+              <% base_def=levels[1].level_90 %>
+              <% base_atk=levels[2].level_90 %>
+              <% base_status=levels[3].level_90 %>
+              <% } %>
+              <% base_atk+=weapons[0].atk %>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-nowrap small">項目名</th>
+                    <th scope="col" class="text-nowrap small">基礎値</th>
+                    <th scope="col" class="text-nowrap small">追加値</th>
+                    <th scope="col" class="text-nowrap small">合計値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">HP</th>
+                    <td>
+                      <%= base_hp %>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">攻撃力</th>
+                    <td>
+                      <%= base_atk %>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">防御力</th>
+                    <td>
+                      <%= base_def %>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">元素熟知
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">元素チャージ効率
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">会心率</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">会心ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">炎元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">水元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">氷元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">雷元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">風元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">岩元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">草元素ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">物理ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">受ける治療効果
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">与える治療効果
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">シールド強化
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">通常攻撃ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">重撃ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">落下攻撃ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">
+                      元素スキルダメージ</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">元素爆発ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">全ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">過負荷ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">燃焼ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">蒸発ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">溶解ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">超電導ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">拡散ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">感電ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">超激化ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">草激化ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">開花ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">烈開花ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">超開花ダメージ
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">炎元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">水元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">氷元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">雷元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">風元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">岩元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap small">草元素耐性
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
