@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "format": "prettier"
+    "format": "prettier --write"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

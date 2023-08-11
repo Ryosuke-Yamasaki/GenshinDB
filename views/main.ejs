@@ -20,7 +20,8 @@
                       <div class="row">
                         <div class="col p-1">
                           <form action="/select_level" method="post">
-                            <select class="form-select form-select-sm p-1" aria-label="characterlevelLabel" name="characterlevel" id="characterlevel" onchange="submit(this.form)">
+                            <div id="characterlevel" class="form-text text-start" style="font-size: 0.1rem;">キャラクターレベル</div>
+                            <select class="form-select form-select-sm" aria-label="characterlevelLabel" name="characterlevel" id="characterlevel" onchange="submit(this.form)">
                               <option value="level_70a">Lv.70a</option>
                               <option value="level_80b">Lv.80b</option>
                               <option value="level_80a">Lv.80a</option>
@@ -441,7 +442,8 @@
                 </div>
                 <div class="row align-items-center flex-nowrap p-1">
                   <div class="col p-1">
-                    <select class="form-select form-select-sm" aria-label="talents_normal">
+                    <div id="talents_normal" class="form-text text-start" style="font-size: 0.1rem;">通常</div>
+                    <select class="form-select form-select-sm" aria-describedby="talents_normal" aria-label="talents_normal">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
@@ -455,7 +457,8 @@
                     </select>
                   </div>
                   <div class="col p-1">
-                    <select class="form-select form-select-sm" aria-label="talents_elementalskill">
+                    <div id="talents_elementalskill" class="form-text text-start" style="font-size: 0.1rem;">元素スキル</div>
+                    <select class="form-select form-select-sm" aria-describedby="talents_elementalskill" aria-label="talents_elementalskill">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
@@ -469,7 +472,8 @@
                     </select>
                   </div>
                   <div class="col p-1">
-                    <select class="form-select form-select-sm" aria-label="talents_elementalburst">
+                    <div id="talents_elementalburst" class="form-text text-start" style="font-size: 0.1rem;">元素スキル</div>
+                    <select class="form-select form-select-sm" aria-describedby="talents_elementalburst" aria-label="talents_elementalburst">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
