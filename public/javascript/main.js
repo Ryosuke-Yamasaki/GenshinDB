@@ -1,0 +1,10 @@
+const ele_basehp = document.querySelector(".basehp");
+const ele_bonushp = document.querySelector(".bonushp");
+const ele_totalhp = document.querySelector(".totalhp");
+const basehp = parseFloat(ele_basehp.textContent);
+const bonushp = parseFloat(ele_bonushp.textContent);
+const totalhp = basehp + bonushp;
+ele_basehp.textContent = basehp;
+ele_bonushp.textContent = bonushp;
+ele_totalhp.textContent = totalhp;
+console.log(basehp);

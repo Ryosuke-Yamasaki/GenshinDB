@@ -3,11 +3,11 @@ const knex = require("../db/knex");
 const TABLE_NAME = "users";
 
 async function findById(userId) {
-  const user = await where({id: userId});
+  const user = await where({ id: userId });
   if (user === null) {
     throw new Error("User not found")
   }
-  return {...user};
+  return { ...user };
 }
 
 async function where(condition) {
