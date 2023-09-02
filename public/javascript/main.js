@@ -7,4 +7,3 @@ const totalhp = basehp + bonushp;
 ele_basehp.textContent = basehp;
 ele_bonushp.textContent = bonushp;
 ele_totalhp.textContent = totalhp;
-console.log(basehp);

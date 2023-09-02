@@ -25,17 +25,17 @@ router.get('/', function (req, res) {
           .then(function (results2) {
             console.log(results2);
             knex("talents")
-              .select("talents_type", "name", talentsnormal)
+              .select("name", talentsnormal)
               .where({ character_id: characterId, talents_type: 1 })
               .then(function (results3) {
                 console.log(results3);
                 knex("talents")
-                  .select("talents_type", "name", talentselementalskill)
+                  .select("name", talentselementalskill)
                   .where({ character_id: characterId, talents_type: 2 })
                   .then(function (results4) {
                     console.log(results4);
                     knex("talents")
-                      .select("talents_type", "name", talentselementalburst)
+                      .select("name", talentselementalburst)
                       .where({ character_id: characterId, talents_type: 3 })
                       .then(function (results5) {
                         console.log(results5);

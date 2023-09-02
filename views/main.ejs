@@ -518,32 +518,13 @@
               <div class="ms-2">ステータス</div>
             </div>
             <div class="body border rounded-bottom p-2">
-              <% let base_hp %>
-              <% let base_atk %>
-              <% let base_def %>
-              <% let base_status %>
-              <% if (levels[0].level_70a) { %>
-              <% base_hp=levels[0].level_70a %>
-              <% base_def=levels[1].level_70a %>
-              <% base_atk=levels[2].level_70a %>
-              <% base_status=levels[3].level_70a %>
-              <% } else if (levels[0].level_80b) { %>
-              <% base_hp=levels[0].level_80b %>
-              <% base_def=levels[1].level_80b %>
-              <% base_atk=levels[2].level_80b %>
-              <% base_status=levels[3].level_80b %>
-              <% } else if (levels[0].level_80a) { %>
-              <% base_hp=levels[0].level_80a %>
-              <% base_def=levels[1].level_80a %>
-              <% base_atk=levels[2].level_80a %>
-              <% base_status=levels[3].level_80a %>
-              <% } else if (levels[0].level_90) { %>
-              <% base_hp=levels[0].level_90 %>
-              <% base_def=levels[1].level_90 %>
-              <% base_atk=levels[2].level_90 %>
-              <% base_status=levels[3].level_90 %>
-              <% } %>
-              <% base_atk+=weapons[0].atk %>
+              <% console.log(Object.keys(levels[0])[1]) %>
+              <% lvl = Object.keys(levels[0])[1] %>
+              <% let base_hp = levels[0][lvl] %>
+              <% let base_def = levels[1][lvl] %>
+              <% let base_atk = levels[2][lvl] %>
+              <% let base_status = levels[3][lvl] %>
+              <% base_atk = base_atk + weapons[0].atk %>
               <table class="table table-sm">
                 <thead>
                   <tr>
@@ -4088,7 +4069,25 @@
               <div class="ms-2">通常攻撃</div>
             </div>
             <div class="body border rounded-bottom p-2">
-
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>攻撃名</th>
+                    <th scope="col">非会心値</th>
+                    <th scope="col">会心値</th>
+                    <th scope="col">期待値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <% x = "level_8" %>
+                    <th scope="row"><%= talents_normal[0][x] %></th>
+                    <td>テーブルのセル</td>
+                    <td>テーブルのセル</td>
+                    <td>テーブルのセル</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <div class="container pb-2">
