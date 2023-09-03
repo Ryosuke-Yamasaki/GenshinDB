@@ -518,12 +518,11 @@
               <div class="ms-2">ステータス</div>
             </div>
             <div class="body border rounded-bottom p-2">
-              <% console.log(Object.keys(levels[0])[1]) %>
               <% lvl = Object.keys(levels[0])[1] %>
-              <% let base_hp = levels[0][lvl] %>
-              <% let base_def = levels[1][lvl] %>
-              <% let base_atk = levels[2][lvl] %>
-              <% let base_status = levels[3][lvl] %>
+              <% base_hp = levels[0][lvl] %>
+              <% base_def = levels[1][lvl] %>
+              <% base_atk = levels[2][lvl] %>
+              <% base_status = levels[3][lvl] %>
               <% base_atk = base_atk + weapons[0].atk %>
               <table class="table table-sm">
                 <thead>
@@ -4069,23 +4068,25 @@
               <div class="ms-2">通常攻撃</div>
             </div>
             <div class="body border rounded-bottom p-2">
-              <table class="table">
+              <table class="table table-sm">
                 <thead>
                   <tr>
-                    <th>攻撃名</th>
-                    <th scope="col">非会心値</th>
-                    <th scope="col">会心値</th>
-                    <th scope="col">期待値</th>
+                    <th scope="col" class="text-nowrap small">攻撃名</th>
+                    <th scope="col" class="text-nowrap small">非会心値</th>
+                    <th scope="col" class="text-nowrap small">会心値</th>
+                    <th scope="col" class="text-nowrap small">期待値</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <% for (let data of talents_normal) { %>
                   <tr>
-                    <% x = "level_8" %>
-                    <th scope="row"><%= talents_normal[0][x] %></th>
-                    <td>テーブルのセル</td>
-                    <td>テーブルのセル</td>
-                    <td>テーブルのセル</td>
+                    <% lvl = Object.keys(data)[1] %>
+                    <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
+                    <td class="normal"><%= data[lvl] %></td>
+                    <td></td>
+                    <td></td>
                   </tr>
+                  <% } %>
                 </tbody>
               </table>
             </div>
