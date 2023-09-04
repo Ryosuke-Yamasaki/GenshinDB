@@ -8,8 +8,8 @@ ele_basehp.textContent = basehp;
 ele_bonushp.textContent = bonushp;
 ele_totalhp.textContent = totalhp;
 
-const ele_a = document.querySelectorAll(".normal");
-for (let i = 0; i < ele_a.length; i++) {
-  const a = parseFloat(ele_a[i].textContent);
-  console.log(a + 1);
+const ele_damage = document.querySelectorAll(".damage");
+for (let i = 0; i < ele_damage.length; i++) {
+  const damage = parseFloat(ele_damage[i].textContent);
+  console.log(damage);
 }

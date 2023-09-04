@@ -19,9 +19,9 @@
                     <div class="container text-center">
                       <div class="row align-items-center">
                         <div class="col p-1">
-                          <form action="/select_level" method="post">
+                          <form action="/character_level" method="post">
                             <div id="characterlevel" class="form-text text-start" style="font-size: 0.1rem;">レベル</div>
-                            <select class="form-select form-select-sm" aria-label="characterlevelLabel" name="characterlevel" id="characterlevel" onchange="submit(this.form)">
+                            <select class="form-select form-select-sm" aria-label="characterlevelLabel" name="characterlevel" onchange="submit(this.form)">
                               <option value="level_70a">Lv.70a</option>
                               <option value="level_80b">Lv.80b</option>
                               <option value="level_80a">Lv.80a</option>
@@ -4082,7 +4082,7 @@
                   <tr>
                     <% lvl = Object.keys(data)[1] %>
                     <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
-                    <td class="normal"><%= data[lvl] %></td>
+                    <td class="damage"><%= data[lvl] %></td>
                     <td></td>
                     <td></td>
                   </tr>
@@ -4096,7 +4096,27 @@
               <div class="ms-2">元素スキル</div>
             </div>
             <div class="body border rounded-bottom p-2">
-
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-nowrap small">攻撃名</th>
+                    <th scope="col" class="text-nowrap small">非会心値</th>
+                    <th scope="col" class="text-nowrap small">会心値</th>
+                    <th scope="col" class="text-nowrap small">期待値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (let data of talents_elementalskill) { %>
+                  <tr>
+                    <% lvl = Object.keys(data)[1] %>
+                    <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
+                    <td class="damage"><%= data[lvl] %></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
             </div>
           </div>
           <div class="container pb-2">
@@ -4104,7 +4124,27 @@
               <div class="ms-2">元素爆発</div>
             </div>
             <div class="body border rounded-bottom p-2">
-
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-nowrap small">攻撃名</th>
+                    <th scope="col" class="text-nowrap small">非会心値</th>
+                    <th scope="col" class="text-nowrap small">会心値</th>
+                    <th scope="col" class="text-nowrap small">期待値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (let data of talents_elementalburst) { %>
+                  <tr>
+                    <% lvl = Object.keys(data)[1] %>
+                    <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
+                    <td class="damage"><%= data[lvl] %></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

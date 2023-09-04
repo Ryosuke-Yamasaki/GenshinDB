@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
   const repassword = req.body.repassword;
 
   knex("users")
-    .where({name: username})
+    .where({ name: username })
     .select("*")
     .then(async function (result) {
       if (result.length !== 0) {
@@ -30,9 +30,63 @@ router.post('/', function (req, res, next) {
       } else if (password === repassword) {
         const hashedPassword = await bcrypt.hash(password, 10);
         knex("users")
-          .insert({name: username, password: hashedPassword})
+          .insert({ name: username, password: hashedPassword })
           .then(function () {
-            res.redirect("/");
+            knex("users")
+              .select("*")
+              .then(function (userId) {
+                console.log(userId);
+                knex("damage_myset")
+                  .select("*")
+                  .where({ id: 1 })
+                  .then(function (tmp) {
+                    console.log(tmp);
+                    knex("damage_myset")
+                      .insert({
+                        user_id: userId[0]["id"],
+                        character_id: tmp[0]["character_id"],
+                        character_level: tmp[0]["character_level"],
+                        normal_level: tmp[0]["normal_level"],
+                        skill_level: tmp[0]["skill_level"],
+                        burst_level: tmp[0]["burst_level"],
+                        weapons_id: tmp[0]["weapons_id"],
+                        refinement_id: tmp[0]["refinement_id"],
+                        flowers_id: tmp[0]["flowers_id"],
+                        plumes_id: tmp[0]["plumes_id"],
+                        sands_id: tmp[0]["sands_id"],
+                        goblets_id: tmp[0]["goblets_id"],
+                        circlets_id: tmp[0]["circlets_id"],
+                      })
+                      .then(function () {
+                        res.redirect('/');
+                      })
+                      .catch(function (err) {
+                        console.error(err);
+                        res.render("signup", {
+                          title: "Sign up",
+                          errorMessage: [err.sqlMessage],
+                          isAuth: isAuth,
+                        });
+                      });
+                  })
+                  .catch(function (err) {
+                    console.error(err);
+                    res.render("signup", {
+                      title: "Sign up",
+                      errorMessage: [err.sqlMessage],
+                      isAuth: isAuth,
+                    });
+                  });
+              })
+              .catch(function (err) {
+                console.error(err);
+                res.render("signup", {
+                  title: "Sign up",
+                  errorMessage: [err.sqlMessage],
+                  isAuth: isAuth,
+                });
+              });
+
           })
           .catch(function (err) {
             console.error(err);
