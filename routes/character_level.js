@@ -3,7 +3,6 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 router.post('/', function (req, res) {
-  const isAuth = req.isAuthenticated();
   const userId = req.user.id;
   const characterlevel = req.body.characterlevel;
   knex("damage_myset")
