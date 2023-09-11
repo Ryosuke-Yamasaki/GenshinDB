@@ -21,7 +21,7 @@
                         <div class="col p-1">
                           <form action="/character_level" method="post">
                             <div id="characterlevel" class="form-text text-start" style="font-size: 0.1rem;">レベル</div>
-                            <select class="form-select form-select-sm save-state3" data-savekey="1" aria-label="characterlevelLabel" name="characterlevel" onchange="submit(this.form)">
+                            <select class="form-select form-select-sm save-state3" data-savekey="characterlevel" aria-label="characterlevelLabel" name="characterlevel" onchange="submit(this.form)">
                               <option value="level_70a">Lv.70a</option>
                               <option value="level_80b">Lv.80b</option>
                               <option value="level_80a">Lv.80a</option>
@@ -443,7 +443,7 @@
                 <div class="row align-items-center flex-nowrap p-1">
                   <div class="col p-1">
                     <div id="talents_normal" class="form-text text-start" style="font-size: 0.1rem;">通常</div>
-                    <select class="form-select form-select-sm" aria-describedby="talents_normal" aria-label="talents_normal">
+                    <select class="form-select form-select-sm save-state3" data-savekey="normal_level" aria-describedby="talents_normal" aria-label="talents_normal">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
@@ -458,7 +458,7 @@
                   </div>
                   <div class="col p-1">
                     <div id="talents_elementalskill" class="form-text text-start" style="font-size: 0.1rem;">元素スキル</div>
-                    <select class="form-select form-select-sm" aria-describedby="talents_elementalskill" aria-label="talents_elementalskill">
+                    <select class="form-select form-select-sm save-state3" data-savekey="skill_level" aria-describedby="talents_elementalskill" aria-label="talents_elementalskill">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
@@ -473,7 +473,7 @@
                   </div>
                   <div class="col p-1">
                     <div id="talents_elementalburst" class="form-text text-start" style="font-size: 0.1rem;">元素スキル</div>
-                    <select class="form-select form-select-sm" aria-describedby="talents_elementalburst" aria-label="talents_elementalburst">
+                    <select class="form-select form-select-sm save-state3" data-savekey="burst_level" aria-describedby="talents_elementalburst" aria-label="talents_elementalburst">
                       <option value="1">Lv.1</option>
                       <option value="2">Lv.2</option>
                       <option value="3">Lv.3</option>
@@ -1698,181 +1698,7 @@
                       </div>
                     </div>
                     <div class="body-text">
-                      <div class="container p-2">
-                        <div class="row">
-                          <div class="col">
-                            <span class="badge text-bg-dark float-start">+20</span>
-                          </div>
-                          <div class="col">
-                            <div class="saveicon float-end">a</div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <ul class="m-1">
-                              <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
-                                  <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
-                                        サブステ１
-                                      </button>
-                                    </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
-                                      <div class="accordion-body p-3">
-                                        <div class="container">
-                                          <div class="row row-cols-2">
-                                            <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
-                                                <option value="1">HP</option>
-                                                <option value="2">HP%</option>
-                                                <option value="3">攻撃力</option>
-                                                <option value="4" selected>攻撃力%</option>
-                                                <option value="5">防御力</option>
-                                                <option value="6">防御力％</option>
-                                                <option value="7">元素熟知</option>
-                                                <option value="8">元素チャージ効率</option>
-                                                <option value="9">会心率</option>
-                                                <option value="10">会心ダメージ</option>
-                                              </select>
-                                            </div>
-                                            <div class="col">
-                                              <input type="number" class="form-control form-control-sm" step="0.1" aria-label="サブステータス">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
-                                  <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
-                                        サブステ２
-                                      </button>
-                                    </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
-                                      <div class="accordion-body p-3">
-                                        <div class="container">
-                                          <div class="row row-cols-2">
-                                            <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
-                                                <option value="1">HP</option>
-                                                <option value="2">HP%</option>
-                                                <option value="3">攻撃力</option>
-                                                <option value="4" selected>攻撃力%</option>
-                                                <option value="5">防御力</option>
-                                                <option value="6">防御力％</option>
-                                                <option value="7">元素熟知</option>
-                                                <option value="8">元素チャージ効率</option>
-                                                <option value="9">会心率</option>
-                                                <option value="10">会心ダメージ</option>
-                                              </select>
-                                            </div>
-                                            <div class="col">
-                                              <input type="number" class="form-control form-control-sm" step="0.1" aria-label="サブステータス">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
-                                  <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
-                                        サブステ３
-                                      </button>
-                                    </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
-                                      <div class="accordion-body p-3">
-                                        <div class="container">
-                                          <div class="row row-cols-2">
-                                            <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
-                                                <option value="1">HP</option>
-                                                <option value="2">HP%</option>
-                                                <option value="3">攻撃力</option>
-                                                <option value="4" selected>攻撃力%</option>
-                                                <option value="5">防御力</option>
-                                                <option value="6">防御力％</option>
-                                                <option value="7">元素熟知</option>
-                                                <option value="8">元素チャージ効率</option>
-                                                <option value="9">会心率</option>
-                                                <option value="10">会心ダメージ</option>
-                                              </select>
-                                            </div>
-                                            <div class="col">
-                                              <input type="number" class="form-control form-control-sm" step="0.1" aria-label="サブステータス">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
-                                  <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
-                                        サブステ４
-                                      </button>
-                                    </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
-                                      <div class="accordion-body p-3">
-                                        <div class="container">
-                                          <div class="row row-cols-2">
-                                            <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
-                                                <option value="1">HP</option>
-                                                <option value="2">HP%</option>
-                                                <option value="3">攻撃力</option>
-                                                <option value="4" selected>攻撃力%</option>
-                                                <option value="5">防御力</option>
-                                                <option value="6">防御力％</option>
-                                                <option value="7">元素熟知</option>
-                                                <option value="8">元素チャージ効率</option>
-                                                <option value="9">会心率</option>
-                                                <option value="10">会心ダメージ</option>
-                                              </select>
-                                            </div>
-                                            <div class="col">
-                                              <input type="number" class="form-control form-control-sm" step="0.1" aria-label="サブステータス">
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <%= flowers[0].name %>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            2セット:<%= flowers[0].twopairop %>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            4セット:<%= flowers[0].fourpairop %>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -2144,19 +1970,19 @@
                           <div class="col">
                             <ul class="m-1">
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
+                                <div class="accordion accordion-flush" id="accordion-flower-subop1">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-flower-subop1" aria-expanded="false" aria-controls="collapse-flower-subop1">
                                         サブステ１
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
+                                    <div class="accordion-collapse collapse" id="collapse-flower-subop1" data-bs-parent="#accordion-flower-subop1">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="flower-subop1" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2180,19 +2006,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
+                                <div class="accordion accordion-flush" id="accordion-flower-subop2">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-flower-subop2" aria-expanded="false" aria-controls="collapse-flower-subop2">
                                         サブステ２
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
+                                    <div class="accordion-collapse collapse" id="collapse-flower-subop2" data-bs-parent="#accordion-flower-subop2">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="flower-subop2" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2216,19 +2042,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
+                                <div class="accordion accordion-flush" id="accordion-flower-subop3">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-flower-subop3" aria-expanded="false" aria-controls="collapse-flower-subop3">
                                         サブステ３
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
+                                    <div class="accordion-collapse collapse" id="collapse-flower-subop3" data-bs-parent="#accordion-flower-subop3">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="flower-subop3" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2252,19 +2078,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
+                                <div class="accordion accordion-flush" id="accordion-flower-subop4">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-flower-subop4" aria-expanded="false" aria-controls="collapse-flower-subop4">
                                         サブステ４
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
+                                    <div class="accordion-collapse collapse" id="collapse-flower-subop4" data-bs-parent="#accordion-flower-subop4">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="flower-subop4" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2577,19 +2403,19 @@
                           <div class="col">
                             <ul class="m-1">
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
+                                <div class="accordion accordion-flush" id="accordion-plume-subop1">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop1" aria-expanded="false" aria-controls="collapse-plume-subop1">
                                         サブステ１
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop1" data-bs-parent="#accordion-plume-subop1">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="plume-subop1" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2613,19 +2439,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
+                                <div class="accordion accordion-flush" id="accordion-plume-subop2">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop2" aria-expanded="false" aria-controls="collapse-plume-subop2">
                                         サブステ２
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop2" data-bs-parent="#accordion-plume-subop2">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="plume-subop2" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2649,19 +2475,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
+                                <div class="accordion accordion-flush" id="accordion-plume-subop3">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop3" aria-expanded="false" aria-controls="collapse-plume-subop3">
                                         サブステ３
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop3" data-bs-parent="#accordion-plume-subop3">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="plume-subop3" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -2685,19 +2511,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
+                                <div class="accordion accordion-flush" id="accordion-plume-subop4">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop4" aria-expanded="false" aria-controls="collapse-plume-subop4">
                                         サブステ４
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop4" data-bs-parent="#accordion-plume-subop4">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="plume-subop4" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3010,19 +2836,19 @@
                           <div class="col">
                             <ul class="m-1">
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
+                                <div class="accordion accordion-flush" id="accordion-sands-subop1">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop1" aria-expanded="false" aria-controls="collapse-sands-subop1">
                                         サブステ１
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop1" data-bs-parent="#accordion-sands-subop1">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="sands-subop1" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3046,19 +2872,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
+                                <div class="accordion accordion-flush" id="accordion-sands-subop2">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop2" aria-expanded="false" aria-controls="collapse-sands-subop2">
                                         サブステ２
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop2" data-bs-parent="#accordion-sands-subop2">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="sands-subop2" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3082,19 +2908,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
+                                <div class="accordion accordion-flush" id="accordion-sands-subop3">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop3" aria-expanded="false" aria-controls="collapse-sands-subop3">
                                         サブステ３
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop3" data-bs-parent="#accordion-sands-subop3">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="sands-subop3" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3118,19 +2944,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
+                                <div class="accordion accordion-flush" id="accordion-sands-subop4">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop4" aria-expanded="false" aria-controls="collapse-sands-subop4">
                                         サブステ４
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop4" data-bs-parent="#accordion-sands-subop4">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="sands-subop4" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3443,19 +3269,19 @@
                           <div class="col">
                             <ul class="m-1">
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop1">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop1" aria-expanded="false" aria-controls="collapse-goblet-subop1">
                                         サブステ１
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop1" data-bs-parent="#accordion-goblet-subop1">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="goblet-subop1" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3479,19 +3305,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop2">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop2" aria-expanded="false" aria-controls="collapse-goblet-subop2">
                                         サブステ２
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop2" data-bs-parent="#accordion-goblet-subop2">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="goblet-subop2" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3515,19 +3341,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop3">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop3" aria-expanded="false" aria-controls="collapse-goblet-subop3">
                                         サブステ３
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop3" data-bs-parent="#accordion-goblet-subop3">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="goblet-subop3" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3551,19 +3377,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop4">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop4" aria-expanded="false" aria-controls="collapse-goblet-subop4">
                                         サブステ４
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop4" data-bs-parent="#accordion-goblet-subop4">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="goblet-subop4" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3876,19 +3702,19 @@
                           <div class="col">
                             <ul class="m-1">
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop1">
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop1">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop1" aria-expanded="false" aria-controls="collapse-subop1">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop1" aria-expanded="false" aria-controls="collapse-circlet-subop1">
                                         サブステ１
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop1" data-bs-parent="#accordion-subop1">
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop1" data-bs-parent="#accordion-circlet-subop1">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="circlet-subop1" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3912,19 +3738,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop2">
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop2">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop2" aria-expanded="false" aria-controls="collapse-subop2">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop2" aria-expanded="false" aria-controls="collapse-circlet-subop2">
                                         サブステ２
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop2" data-bs-parent="#accordion-subop2">
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop2" data-bs-parent="#accordion-circlet-subop2">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="circlet-subop2" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3948,19 +3774,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop3">
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop3">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop3" aria-expanded="false" aria-controls="collapse-subop3">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop3" aria-expanded="false" aria-controls="collapse-circlet-subop3">
                                         サブステ３
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop3" data-bs-parent="#accordion-subop3">
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop3" data-bs-parent="#accordion-circlet-subop3">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="circlet-subop3" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
@@ -3984,19 +3810,19 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="accordion accordion-flush" id="accordion-subop4">
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop4">
                                   <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-subop4" aria-expanded="false" aria-controls="collapse-subop4">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop4" aria-expanded="false" aria-controls="collapse-circlet-subop4">
                                         サブステ４
                                       </button>
                                     </h2>
-                                    <div class="accordion-collapse collapse" id="collapse-subop4" data-bs-parent="#accordion-subop4">
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop4" data-bs-parent="#accordion-circlet-subop4">
                                       <div class="accordion-body p-2">
                                         <div class="container">
                                           <div class="row row-cols-2">
                                             <div class="col">
-                                              <select class="form-select form-select-sm" aria-label="サブオプション">
+                                              <select class="form-select form-select-sm save-state3" data-savekey="circlet-subop4" aria-label="サブオプション">
                                                 <option value="1">HP</option>
                                                 <option value="2">HP%</option>
                                                 <option value="3">攻撃力</option>
