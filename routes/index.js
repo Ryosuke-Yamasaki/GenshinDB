@@ -242,7 +242,18 @@ router.get('/', function (req, res) {
   }
 });
 
+router.use('/character', require('./character'));
 router.use('/character_level', require('./character_level'));
+router.use('/normal_level', require('./normal_level'));
+router.use('/skill_level', require('./skill_level'));
+router.use('/burst_level', require('./burst_level'));
+router.use('/weapons', require('./weapons'));
+router.use('/refinement', require('./refinement'));
+router.use('/flower', require('./flower'));
+router.use('/plume', require('./plume'));
+router.use('/sands', require('./sands'));
+router.use('/goblet', require('./goblet'));
+router.use('/circlet', require('./circlet'));
 
 router.use('/signup', require('./signup'));
 router.use('/signin', require('./signin'));
