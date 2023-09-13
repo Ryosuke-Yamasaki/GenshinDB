@@ -41,14 +41,15 @@
                                 </div>
                                 <div class="modal-body d-grid">
                                   <% for (let constellation of constellations ) { %>
-                                  <button type="submit">
+                                  <input type="checkbox" class="btn-check" id="C<%= constellation.constellation_type %>" autocomplete="off">
+                                  <label for="C<%= constellation.constellation_type %>" class="btn btn-outline-dark">
                                     <div class="header">
                                       <%= constellation.name %>
                                     </div>
                                     <div class="body">
                                       <%= constellation.effect %>
                                     </div>
-                                  </button>
+                                  </label>
                                   <% } %>
                                 </div>
                               </div>

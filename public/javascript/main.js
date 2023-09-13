@@ -1,3 +1,4 @@
+//HP
 const ele_basehp = document.querySelector(".basehp");
 const ele_bonushp = document.querySelector(".bonushp");
 const ele_totalhp = document.querySelector(".totalhp");
@@ -8,12 +9,16 @@ ele_basehp.textContent = basehp;
 ele_bonushp.textContent = bonushp;
 ele_totalhp.textContent = totalhp;
 
+
+//攻撃倍率
 const ele_damage = document.querySelectorAll(".damage");
 for (let i = 0; i < ele_damage.length; i++) {
   const damage = parseFloat(ele_damage[i].textContent);
   console.log(damage);
 }
 
+
+//localstorageに保存
 function alertDebug(arg) {
   //alert(arg);   // ﾃﾞﾊﾞｯｸﾞ時に有効化すると良い
 }
@@ -61,3 +66,6 @@ function save_restore3_select(target_class) {
   }
 }
 save_restore3_select('save-state3');
+
+
+//

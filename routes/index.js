@@ -42,7 +42,7 @@ router.get('/', function (req, res) {
                               .then(function (results6) {
                                 console.log(results6);
                                 knex("constellation")
-                                  .select("name", "effect")
+                                  .select("constellation_type", "name", "effect")
                                   .where({ character_id: damage[0]["character_id"] })
                                   .then(function (results7) {
                                     console.log(results7);
