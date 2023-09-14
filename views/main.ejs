@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="modal-body d-grid">
                                   <% for (let constellation of constellations ) { %>
-                                  <input type="checkbox" class="btn-check" id="constellation-<%= constellation.id %>" autocomplete="off">
+                                  <input type="checkbox" class="btn-check save-state1 constellation C<%= constellation.constellation_type %>" data-savekey="C<%= constellation.constellation_type %>" id="constellation-<%= constellation.id %>" autocomplete="off">
                                   <label for="constellation-<%= constellation.id %>" class="btn btn-outline-dark">
                                     <div class="header">
                                       <%= constellation.name %>
@@ -493,6 +493,9 @@
                       </select>
                     </form>
                   </div>
+                </div>
+                <div class="row align-items-center flex-nowrap p-1">
+
                 </div>
               </div>
             </div>

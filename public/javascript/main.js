@@ -98,39 +98,66 @@ const physical_db = 0;
 const ele_damage = document.querySelectorAll(".damage");
 for (let i = 0; i < ele_damage.length; i++) {
   const damage = parseFloat(ele_damage[i].textContent);
-  console.log(damage);
 }
 
 
 //localstorageに保存
-function alertDebug(arg) {
-  //alert(arg);   // ﾃﾞﾊﾞｯｸﾞ時に有効化すると良い
+function save_restore1_checkbox(target_class) {
+  let cbstate;
+
+  window.addEventListener('load', function () {
+    cbstate = JSON.parse(localStorage['CBState'] || '{}');
+
+    for (let key in cbstate) {
+      let el_lst = document.querySelectorAll('input[data-savekey="' + key + '"].' + target_class);
+      set_checkbox_checked_all(el_lst, true);
+    }
+
+    let cb = document.getElementsByClassName(target_class);
+
+    for (let c = 0; c < cb.length; c++) {
+      cb[c].addEventListener('click', function (evt) {
+        let savekey = this.getAttribute('data-savekey');
+        if (this.checked) {
+          cbstate[savekey] = true;
+        }
+        else if (cbstate[savekey]) {
+          delete cbstate[savekey];
+        }
+        localStorage['CBState'] = JSON.stringify(cbstate);
+      });
+    }
+  });
+
+  function set_checkbox_checked_all(el_lst, checked) {
+    for (let c = 0; c < el_lst.length; c++) {
+      let el = el_lst[c];
+      if (el) {
+        el.checked = checked;
+      }
+    }
+  }
 }
+save_restore1_checkbox('save-state1');
 
 function save_restore3_select(target_class) {
-  var ddstate;
+  let ddstate;
 
   window.addEventListener('load', function () {
     ddstate = JSON.parse(localStorage['DDState'] || '{}');
-    alertDebug('ddstate = ' + JSON.stringify(ddstate));
-    for (var key in ddstate) {
-      var value = ddstate[key]; // =selectindex値
-      alertDebug('key=' + key + ' ,value=' + value);
-      var el_lst = document.querySelectorAll('select[data-savekey="' + key + '"].' + target_class);
+    for (let key in ddstate) {
+      let value = ddstate[key];
+      let el_lst = document.querySelectorAll('select[data-savekey="' + key + '"].' + target_class);
       set_select_selectindex_all(el_lst, value);
     }
 
-    var dd = document.getElementsByClassName(target_class);
-    alertDebug('dd = ' + JSON.stringify(dd));
+    let dd = document.getElementsByClassName(target_class);
 
-    for (var c = 0; c < dd.length; c++) {
-      alertDebug('dd[' + c + ']:name=' + dd[c].name + ', value=' + dd[c].value);
+    for (let c = 0; c < dd.length; c++) {
       dd[c].addEventListener('change', function (evt) {
-        alertDebug('input:value=' + this.value);
-        var savekey = this.getAttribute('data-savekey');
-        var selectElement = evt.target;
-        var selectindex = selectElement.selectedIndex;
-        alertDebug('selectindex=' + selectindex);
+        let savekey = this.getAttribute('data-savekey');
+        let selectElement = evt.target;
+        let selectindex = selectElement.selectedIndex;
         ddstate[savekey] = selectindex;
         localStorage['DDState'] = JSON.stringify(ddstate);
       });
@@ -139,11 +166,9 @@ function save_restore3_select(target_class) {
 
   function set_select_selectindex_all(el_lst, selectindex) {
 
-    for (var c = 0; c < el_lst.length; c++) {
-      var el = el_lst[c];
-      //alertDebug('el=' + JSON.stringify(el) + ' ,el.name=' + el.name);
+    for (let c = 0; c < el_lst.length; c++) {
+      let el = el_lst[c];
       if (el) {
-        //alertDebug('el.checked=' + el.checked);
         el.selectedIndex = selectindex;
       }
     }
@@ -152,4 +177,27 @@ function save_restore3_select(target_class) {
 save_restore3_select('save-state3');
 
 
-//命ノ星座の効果
+//命ノ星座の凸数選択
+let constellation_6 = document.querySelector(".C6");
+
+let constellation_list = document.querySelectorAll(".constellation");
+
+
+constellation_6.addEventListener('change', change_6);
+
+
+function change_6() {
+  if (constellation_6.checked) {
+    for (let i in constellation_list) {
+      if (constellation_list.hasOwnProperty(i)) {
+        constellation_list[i].checked = true;
+      }
+    }
+  } else {
+    for (let i in constellation_list) {
+      if (constellation_list.hasOwnProperty(i)) {
+        constellation_list[i].checked = false;
+      }
+    }
+  }
+};
