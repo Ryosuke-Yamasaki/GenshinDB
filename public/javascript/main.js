@@ -150,3 +150,6 @@ function save_restore3_select(target_class) {
   }
 }
 save_restore3_select('save-state3');
+
+
+//命ノ星座の効果
