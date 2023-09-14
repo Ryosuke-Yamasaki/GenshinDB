@@ -3911,7 +3911,7 @@
                 <tbody>
                   <% for (let data of talents_normal) { %>
                   <tr>
-                    <% lvl = Object.keys(data)[1] %>
+                    <% lvl = Object.keys(data)[2] %>
                     <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
                     <td class="damage"><%= data[lvl] %></td>
                     <td></td>
@@ -3939,7 +3939,7 @@
                 <tbody>
                   <% for (let data of talents_elementalskill) { %>
                   <tr>
-                    <% lvl = Object.keys(data)[1] %>
+                    <% lvl = Object.keys(data)[2] %>
                     <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
                     <td class="damage"><%= data[lvl] %></td>
                     <td></td>
@@ -3967,7 +3967,7 @@
                 <tbody>
                   <% for (let data of talents_elementalburst) { %>
                   <tr>
-                    <% lvl = Object.keys(data)[1] %>
+                    <% lvl = Object.keys(data)[2] %>
                     <th scope="row" class="text-nowrap small"><%= data["name"] %></th>
                     <td class="damage"><%= data[lvl] %></td>
                     <td></td>

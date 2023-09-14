@@ -22,18 +22,18 @@ router.get('/', function (req, res) {
               .then(function (results2) {
                 console.log(results2);
                 knex("talents")
-                  .select("name", damage[0]["normal_level"])
-                  .where({ character_id: damage[0]["character_id"], talents_type: 1 })
+                  .select("name", "talents_type", damage[0]["normal_level"])
+                  .where({ character_id: damage[0]["character_id"], talents_class: 1 })
                   .then(function (results3) {
                     console.log(results3);
                     knex("talents")
-                      .select("name", damage[0]["skill_level"])
-                      .where({ character_id: damage[0]["character_id"], talents_type: 2 })
+                      .select("name", "talents_type", damage[0]["skill_level"])
+                      .where({ character_id: damage[0]["character_id"], talents_class: 2 })
                       .then(function (results4) {
                         console.log(results4);
                         knex("talents")
-                          .select("name", damage[0]["burst_level"])
-                          .where({ character_id: damage[0]["character_id"], talents_type: 3 })
+                          .select("name", "talents_type", damage[0]["burst_level"])
+                          .where({ character_id: damage[0]["character_id"], talents_class: 3 })
                           .then(function (results5) {
                             console.log(results5);
                             knex("passive")
