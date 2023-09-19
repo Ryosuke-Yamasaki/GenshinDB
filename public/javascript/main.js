@@ -116,13 +116,32 @@ function save_restore1_checkbox(target_class) {
     let cb = document.getElementsByClassName(target_class);
 
     for (let c = 0; c < cb.length; c++) {
-      cb[c].addEventListener('click', function (evt) {
+      cb[c].addEventListener('change', function (evt) {
         let savekey = this.getAttribute('data-savekey');
         if (this.checked) {
-          cbstate[savekey] = true;
-        }
-        else if (cbstate[savekey]) {
-          delete cbstate[savekey];
+          if (savekey == "constellation-0") {
+            cbstate[savekey] = true;
+            for (let i = 1; i < 7; i++) {
+              delete cbstate['constellation-' + i];
+            }
+          } else if (savekey.indexOf("constellation-") != -1) {
+            delete cbstate["constellation-0"];
+            let conkey = this.getAttribute('constellation-key');
+            for (let i = conkey; i > 0; i--) {
+              cbstate['constellation-' + i] = true;
+            }
+          } else {
+            cbstate[savekey] = true;
+          }
+        } else if (cbstate[savekey]) {
+          if (savekey.indexOf("constellation-") != -1) {
+            let conkey = this.getAttribute('constellation-key');
+            for (let i = conkey; i < 7; i++) {
+              delete cbstate['constellation-' + i];
+            }
+          } else {
+            delete cbstate[savekey];
+          }
         }
         localStorage['CBState'] = JSON.stringify(cbstate);
       });
@@ -178,26 +197,69 @@ save_restore3_select('save-state3');
 
 
 //命ノ星座の凸数選択
+let constellation_0 = document.querySelector(".C0");
+let constellation_1 = document.querySelector(".C1");
+let constellation_2 = document.querySelector(".C2");
+let constellation_3 = document.querySelector(".C3");
+let constellation_4 = document.querySelector(".C4");
+let constellation_5 = document.querySelector(".C5");
 let constellation_6 = document.querySelector(".C6");
 
-let constellation_list = document.querySelectorAll(".constellation");
+constellation_0.onchange = function () {
+  constellation_1.checked = false;
+  constellation_2.checked = false;
+  constellation_3.checked = false;
+  constellation_4.checked = false;
+  constellation_5.checked = false;
+  constellation_6.checked = false;
+}
+constellation_1.onchange = function () {
+  constellation_0.checked = false;
+  constellation_2.checked = false;
+  constellation_3.checked = false;
+  constellation_4.checked = false;
+  constellation_5.checked = false;
+  constellation_6.checked = false;
+}
 
+constellation_2.onchange = function () {
+  constellation_0.checked = false;
+  constellation_1.checked = true;
+  constellation_3.checked = false;
+  constellation_4.checked = false;
+  constellation_5.checked = false;
+  constellation_6.checked = false;
+}
 
-constellation_6.addEventListener('change', change_6);
-
-
-function change_6() {
-  if (constellation_6.checked) {
-    for (let i in constellation_list) {
-      if (constellation_list.hasOwnProperty(i)) {
-        constellation_list[i].checked = true;
-      }
-    }
-  } else {
-    for (let i in constellation_list) {
-      if (constellation_list.hasOwnProperty(i)) {
-        constellation_list[i].checked = false;
-      }
-    }
-  }
-};
+constellation_3.onchange = function () {
+  constellation_0.checked = false;
+  constellation_1.checked = true;
+  constellation_2.checked = true;
+  constellation_4.checked = false;
+  constellation_5.checked = false;
+  constellation_6.checked = false;
+}
+constellation_4.onchange = function () {
+  constellation_0.checked = false;
+  constellation_1.checked = true;
+  constellation_2.checked = true;
+  constellation_3.checked = true;
+  constellation_5.checked = false;
+  constellation_6.checked = false;
+}
+constellation_5.onchange = function () {
+  constellation_0.checked = false;
+  constellation_1.checked = true;
+  constellation_2.checked = true;
+  constellation_3.checked = true;
+  constellation_4.checked = true;
+  constellation_6.checked = false;
+}
+constellation_6.onchange = function () {
+  constellation_0.checked = false;
+  constellation_1.checked = true;
+  constellation_2.checked = true;
+  constellation_3.checked = true;
+  constellation_4.checked = true;
+  constellation_5.checked = true;
+}

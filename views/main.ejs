@@ -40,17 +40,26 @@
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body d-grid">
-                                  <% for (let constellation of constellations ) { %>
-                                  <input type="checkbox" class="btn-check save-state1 constellation C<%= constellation.constellation_type %>" data-savekey="C<%= constellation.constellation_type %>" id="constellation-<%= constellation.id %>" autocomplete="off">
-                                  <label for="constellation-<%= constellation.id %>" class="btn btn-outline-dark">
-                                    <div class="header">
-                                      <%= constellation.name %>
-                                    </div>
-                                    <div class="body">
-                                      <%= constellation.effect %>
-                                    </div>
-                                  </label>
-                                  <% } %>
+                                  <div class="btn-group-vertical" role="group" aria-label="constellation-group">
+                                    <input type="checkbox" class="btn-check save-state1 constellation C0" data-savekey="constellation-0" constellation-key="0" id="constellation-0" autocomplete="off">
+                                    <label for="constellation-0" class="btn btn-outline-dark">
+                                      <div class="header">
+                                        無凸
+                                      </div>
+                                      <div class="body"></div>
+                                    </label>
+                                    <% for (let constellation of constellations ) { %>
+                                    <input type="checkbox" class="btn-check save-state1 constellation C<%= constellation.constellation_type %>" data-savekey="constellation-<%= constellation.constellation_type %>" constellation-key="<%= constellation.constellation_type %>" id="constellation-<%= constellation.id %>" autocomplete="off">
+                                    <label for="constellation-<%= constellation.id %>" class="btn btn-outline-dark">
+                                      <div class="header">
+                                        <%= constellation.name %>
+                                      </div>
+                                      <div class="body">
+                                        <%= constellation.effect %>
+                                      </div>
+                                    </label>
+                                    <% } %>
+                                  </div>
                                 </div>
                               </div>
                             </div>
