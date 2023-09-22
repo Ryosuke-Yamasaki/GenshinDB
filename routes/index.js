@@ -254,6 +254,11 @@ router.use('/plume', require('./plume'));
 router.use('/sands', require('./sands'));
 router.use('/goblet', require('./goblet'));
 router.use('/circlet', require('./circlet'));
+router.use('/insert_flower', require('./insert_flower'));
+router.use('/insert_plume', require('./insert_plume'));
+router.use('/insert_sands', require('./insert_sands'));
+router.use('/insert_goblet', require('./insert_goblet'));
+router.use('/insert_circlet', require('./insert_circlet'));
 
 router.use('/signup', require('./signup'));
 router.use('/signin', require('./signin'));

@@ -305,7 +305,6 @@ window.addEventListener('DOMContentLoaded', function () {
     let subOP_list = subOP[i].querySelectorAll("select[ data-subop-label = " + subop_label + "] option");
     for (let subOP_lists of subOP_list) {
       if (subOP_lists.selected) {
-        console.log(subOP_lists.value);
         ele_subOP.textContent = subOP_lists.textContent;
       }
     }
@@ -326,7 +325,6 @@ window.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < subSTE.length; i++) {
     let subste_label = subSTE[i].getAttribute("data-subste-label");
     let ele_subSTE = document.querySelector("." + subste_label);
-    console.log(subSTE[i].value);
     ele_subSTE.textContent = "+" + subSTE[i].value;
     subSTE[i].addEventListener('change', function () {
       subste_label = subSTE[i].getAttribute("data-subste-label");

@@ -10,7 +10,15 @@ router.post('/', function (req, res) {
     .update({ refinement_id: refinementId })
     .then(function () {
       res.redirect('/');
-    });
+    })
+    .catch(function (err) {
+      console.log(err);
+      res.render('index', {
+        title: 'Genshin DB',
+        errorMessage: [err.sqlMessage],
+        isAuth: isAuth,
+      });
+    })
 });
 
 module.exports = router;

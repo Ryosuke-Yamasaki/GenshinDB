@@ -4,10 +4,22 @@ const knex = require('../db/knex');
 
 router.post('/', function (req, res) {
   const userId = req.user.id;
-  const skilllevel = req.body.skill;
-  knex("damage_myset")
-    .where({ user_id: userId })
-    .update({ skill_level: skilllevel })
+  console.log(Object.values(req.body));
+  knex("artifact_myset")
+    .insert({
+      /*user_id: userId,
+      artifact_id: req.body[Object.keys],
+      parts_id: 1,
+      mainop_id: 1,
+      substatus1:,
+      substatus2:,
+      substatus3:,
+      substatus4:,
+      subnum1:,
+      subnum2:,
+      subnum3:,
+      subnum4:,*/
+    })
     .then(function () {
       res.redirect('/');
     })
