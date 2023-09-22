@@ -4,7 +4,6 @@ const knex = require('../db/knex');
 
 router.post('/', function (req, res) {
   const userId = req.user.id;
-  console.log(Object.keys(req.body));
   knex("damage_myset")
     .select("flowers_id")
     .then(function (damage) {
@@ -14,14 +13,14 @@ router.post('/', function (req, res) {
           artifact_id: damage[0]["flowers_id"],
           parts_id: 1,
           mainop_id: 1,
-          /*substatus1:req.body[],
-          substatus2:,
-          substatus3:,
-          substatus4:,
-          subnum1:,
-          subnum2:,
-          subnum3:,
-          subnum4:,*/
+          substatus1: req.body["flower-subop1"],
+          substatus2: req.body["flower-subop2"],
+          substatus3: req.body["flower-subop3"],
+          substatus4: req.body["flower-subop4"],
+          subnum1: req.body["flower-subste1"],
+          subnum2: req.body["flower-subste2"],
+          subnum3: req.body["flower-subste3"],
+          subnum4: req.body["flower-subste4"],
         })
         .then(function () {
           res.redirect('/');
