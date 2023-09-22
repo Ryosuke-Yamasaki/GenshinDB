@@ -105,7 +105,7 @@ for (let i = 0; i < ele_damage.length; i++) {
 function save_restore1_checkbox(target_class) {
   let cbstate;
 
-  window.addEventListener('load', function () {
+  window.addEventListener('DOMContentLoaded', function () {
     cbstate = JSON.parse(localStorage['CBState'] || '{}');
 
     for (let key in cbstate) {
@@ -159,10 +159,41 @@ function save_restore1_checkbox(target_class) {
 }
 save_restore1_checkbox('save-state1');
 
+function save_restore2_inputtext(target_class) {
+  var tbstate;
+
+  window.addEventListener('DOMContentLoaded', function () {
+    tbstate = JSON.parse(localStorage['TBState'] || '{}');
+    for (var key in tbstate) {
+      var value = tbstate[key];
+      var el_lst = document.querySelectorAll('input[data-savekey="' + key + '"].' + target_class);
+      set_textbox_string_all(el_lst, value);
+    }
+    var tb = document.getElementsByClassName(target_class);
+    for (var c = 0; c < tb.length; c++) {
+      tb[c].addEventListener('input', function (evt) {
+        var savekey = this.getAttribute('data-savekey');
+        tbstate[savekey] = this.value;
+        localStorage['TBState'] = JSON.stringify(tbstate);
+      });
+    }
+  });
+
+  function set_textbox_string_all(el_lst, value) {
+    for (var c = 0; c < el_lst.length; c++) {
+      var el = el_lst[c];
+      if (el) {
+        el.value = value;
+      }
+    }
+  }
+}
+save_restore2_inputtext('save-state2');
+
 function save_restore3_select(target_class) {
   let ddstate;
 
-  window.addEventListener('load', function () {
+  window.addEventListener('DOMContentLoaded', function () {
     ddstate = JSON.parse(localStorage['DDState'] || '{}');
     for (let key in ddstate) {
       let value = ddstate[key];
@@ -263,3 +294,44 @@ constellation_6.onchange = function () {
   constellation_4.checked = true;
   constellation_5.checked = true;
 }
+
+//聖遺物のサブステの表示
+window.addEventListener('DOMContentLoaded', function () {
+  //オプションの表示
+  let subOP = document.querySelectorAll("select.subop");
+  for (let i = 0; i < subOP.length; i++) {
+    let subop_label = subOP[i].getAttribute("data-subop-label");
+    let ele_subOP = document.querySelector("." + subop_label);
+    let subOP_list = subOP[i].querySelectorAll("select[ data-subop-label = " + subop_label + "] option");
+    for (let subOP_lists of subOP_list) {
+      if (subOP_lists.selected) {
+        console.log(subOP_lists.value);
+        ele_subOP.textContent = subOP_lists.textContent;
+      }
+    }
+    subOP[i].addEventListener('change', function () {
+      subop_label = subOP[i].getAttribute("data-subop-label");
+      ele_subOP = document.querySelector("." + subop_label);
+      subOP_list = subOP[i].querySelectorAll("select[ data-subop-label = " + subop_label + "] option");
+      for (let subOP_lists of subOP_list) {
+        if (subOP_lists.selected) {
+          ele_subOP.textContent = subOP_lists.textContent;
+        }
+      }
+    });
+  }
+
+  //数値の表示
+  let subSTE = document.querySelectorAll("input.subste");
+  for (let i = 0; i < subSTE.length; i++) {
+    let subste_label = subSTE[i].getAttribute("data-subste-label");
+    let ele_subSTE = document.querySelector("." + subste_label);
+    console.log(subSTE[i].value);
+    ele_subSTE.textContent = "+" + subSTE[i].value;
+    subSTE[i].addEventListener('change', function () {
+      subste_label = subSTE[i].getAttribute("data-subste-label");
+      ele_subSTE = document.querySelector("." + subste_label);
+      ele_subSTE.textContent = "+" + subSTE[i].value;
+    })
+  }
+});
