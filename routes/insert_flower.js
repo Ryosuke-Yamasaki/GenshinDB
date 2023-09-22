@@ -12,7 +12,7 @@ router.post('/', function (req, res) {
           user_id: userId,
           artifact_id: damage[0]["flowers_id"],
           parts_id: 1,
-          mainop_id: 1,
+          mainop_id: req.body["flower-mainop"],
           substatus1: req.body["flower-subop1"],
           substatus2: req.body["flower-subop2"],
           substatus3: req.body["flower-subop3"],
