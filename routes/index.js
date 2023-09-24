@@ -81,24 +81,99 @@ router.get('/', function (req, res) {
                                                               .where({ id: damage[0]["circlets_id"] })
                                                               .then(function (results14) {
                                                                 console.log(results14);
-                                                                res.render('index', {
-                                                                  title: 'Genshin DB',
-                                                                  characters: results1,
-                                                                  levels: results2,
-                                                                  talents_normal: results3,
-                                                                  talents_elementalskill: results4,
-                                                                  talents_elementalburst: results5,
-                                                                  passives: results6,
-                                                                  constellations: results7,
-                                                                  weapons: results8,
-                                                                  refinements: results9,
-                                                                  flowers: results10,
-                                                                  plumes: results11,
-                                                                  sands: results12,
-                                                                  goblets: results13,
-                                                                  circlets: results14,
-                                                                  isAuth: isAuth,
-                                                                });
+                                                                knex("mainop")
+                                                                  .select("status_id", results10[0]["quality"])
+                                                                  .where({ id: damage[0]["flowersmainop_id"] })
+                                                                  .then(function (results15) {
+                                                                    console.log(results15);
+                                                                    knex("mainop")
+                                                                      .select("status_id", results11[0]["quality"])
+                                                                      .where({ id: damage[0]["plumesmainop_id"] })
+                                                                      .then(function (results16) {
+                                                                        console.log(results16);
+                                                                        knex("mainop")
+                                                                          .select("status_id", results12[0]["quality"])
+                                                                          .where({ id: damage[0]["sandsmainop_id"] })
+                                                                          .then(function (results17) {
+                                                                            console.log(results17);
+                                                                            knex("mainop")
+                                                                              .select("status_id", results13[0]["quality"])
+                                                                              .where({ id: damage[0]["gobletsmainop_id"] })
+                                                                              .then(function (results18) {
+                                                                                console.log(results18);
+                                                                                knex("mainop")
+                                                                                  .select("status_id", results14[0]["quality"])
+                                                                                  .where({ id: damage[0]["circletsmainop_id"] })
+                                                                                  .then(function (results19) {
+                                                                                    console.log(results19);
+                                                                                    res.render('index', {
+                                                                                      title: 'Genshin DB',
+                                                                                      characters: results1,
+                                                                                      levels: results2,
+                                                                                      talents_normal: results3,
+                                                                                      talents_elementalskill: results4,
+                                                                                      talents_elementalburst: results5,
+                                                                                      passives: results6,
+                                                                                      constellations: results7,
+                                                                                      weapons: results8,
+                                                                                      refinements: results9,
+                                                                                      flowers: results10,
+                                                                                      plumes: results11,
+                                                                                      sands: results12,
+                                                                                      goblets: results13,
+                                                                                      circlets: results14,
+                                                                                      flowersmainop: results15,
+                                                                                      plumesmainop: results16,
+                                                                                      sandsmainop: results17,
+                                                                                      gobletsmainop: results18,
+                                                                                      circletsmainop: results19,
+                                                                                      isAuth: isAuth,
+                                                                                    });
+                                                                                  })
+                                                                                  .catch(function (err) {
+                                                                                    console.log(err);
+                                                                                    res.render('index', {
+                                                                                      title: 'Genshin DB',
+                                                                                      errorMessage: [err.sqlMessage],
+                                                                                      isAuth: isAuth,
+                                                                                    });
+                                                                                  });
+                                                                              })
+                                                                              .catch(function (err) {
+                                                                                console.log(err);
+                                                                                res.render('index', {
+                                                                                  title: 'Genshin DB',
+                                                                                  errorMessage: [err.sqlMessage],
+                                                                                  isAuth: isAuth,
+                                                                                });
+                                                                              });
+                                                                          })
+                                                                          .catch(function (err) {
+                                                                            console.log(err);
+                                                                            res.render('index', {
+                                                                              title: 'Genshin DB',
+                                                                              errorMessage: [err.sqlMessage],
+                                                                              isAuth: isAuth,
+                                                                            });
+                                                                          });
+                                                                      })
+                                                                      .catch(function (err) {
+                                                                        console.log(err);
+                                                                        res.render('index', {
+                                                                          title: 'Genshin DB',
+                                                                          errorMessage: [err.sqlMessage],
+                                                                          isAuth: isAuth,
+                                                                        });
+                                                                      });
+                                                                  })
+                                                                  .catch(function (err) {
+                                                                    console.log(err);
+                                                                    res.render('index', {
+                                                                      title: 'Genshin DB',
+                                                                      errorMessage: [err.sqlMessage],
+                                                                      isAuth: isAuth,
+                                                                    });
+                                                                  });
                                                               })
                                                               .catch(function (err) {
                                                                 console.log(err);
@@ -259,6 +334,11 @@ router.use('/insert_plume', require('./insert_plume'));
 router.use('/insert_sands', require('./insert_sands'));
 router.use('/insert_goblet', require('./insert_goblet'));
 router.use('/insert_circlet', require('./insert_circlet'));
+router.use('/flower_mainop', require('./flower_mainop'));
+router.use('/plume_mainop', require('./plume_mainop'));
+router.use('/sands_mainop', require('./sands_mainop'));
+router.use('/goblet_mainop', require('./goblet_mainop'));
+router.use('/circlet_mainop', require('./circlet_mainop'));
 
 router.use('/signup', require('./signup'));
 router.use('/signin', require('./signin'));

@@ -56,6 +56,11 @@ router.post('/', function (req, res, next) {
                         sands_id: tmp[0]["sands_id"],
                         goblets_id: tmp[0]["goblets_id"],
                         circlets_id: tmp[0]["circlets_id"],
+                        flowersmainop_id: tmp[0]["flowersmainop_id"],
+                        plumesmainop_id: tmp[0]["plumesmainop_id"],
+                        sandsmainop_id: tmp[0]["sandsmainop_id"],
+                        gobletsmainop_id: tmp[0]["gobletsmainop_id"],
+                        circletsmainop_id: tmp[0]["circletsmainop_id"],
                       })
                       .then(function () {
                         res.redirect('/');

@@ -295,9 +295,21 @@ constellation_6.onchange = function () {
   constellation_5.checked = true;
 }
 
-//聖遺物のサブステの表示
+//聖遺物の表示
 window.addEventListener('DOMContentLoaded', function () {
-  //オプションの表示
+  //メインオプションの表示
+  let mainOP = document.querySelectorAll("select.mainop");
+  for (let i = 0; i < mainOP.length; i++) {
+    mainOP[i].addEventListener('change', function () {
+      let change_name = mainOP[i].getAttribute("name");
+      let form_name = mainOP[i].getAttribute("form")
+      mainOP[i].setAttribute("form", change_name);
+      document.forms[change_name].submit();
+      mainOP[i].setAttribute("form", form_name);
+    });
+  }
+
+  //サブオプションの表示
   let subOP = document.querySelectorAll("select.subop");
   for (let i = 0; i < subOP.length; i++) {
     let subop_label = subOP[i].getAttribute("data-subop-label");

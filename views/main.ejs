@@ -932,7 +932,7 @@
                             <div class="row ms-1">
                               <div class="partsname">a</div>
                               <div class="status mt-4">a</div>
-                              <div class="num">a</div>
+                              <div class="mainop_num">a</div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -1719,20 +1719,13 @@
                             <div class="row ms-1">
                               <div class="partsname">a</div>
                               <div class="status mt-4">
-                                <select class="form-select form-select-sm save-state3" name="flower-mainop" form="insert_flower" data-savekey="flower-mainop" aria-label="メインオプション">
-                                  <option value="1" selected>HP</option>
-                                  <option value="2" disabled>HP%</option>
-                                  <option value="3" disabled>攻撃力</option>
-                                  <option value="4" disabled>攻撃力%</option>
-                                  <option value="5" disabled>防御力</option>
-                                  <option value="6" disabled>防御力％</option>
-                                  <option value="7" disabled>元素熟知</option>
-                                  <option value="8" disabled>元素チャージ効率</option>
-                                  <option value="9" disabled>会心率</option>
-                                  <option value="10" disabled>会心ダメージ</option>
-                                </select>
+                                <form action="/flower_mainop" id="flower-mainop" method="post">
+                                  <select class="form-select form-select-sm mainop save-state3" name="flower-mainop" form="insert_flower" data-savekey="flower-mainop" aria-label="メインオプション">
+                                    <option value="1" selected>HP</option>
+                                  </select>
+                                </form>
                               </div>
-                              <div class="num">a</div>
+                              <div class="flower-mainop text-white"><%= flowersmainop[0][flowers[0].quality] %></div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -2175,20 +2168,13 @@
                             <div class="row ms-1">
                               <div class="partsname">a</div>
                               <div class="status mt-4">
-                                <select class="form-select form-select-sm save-state3" name="plume-mainop" form="insert_plume" data-savekey="plume-mainop" aria-label="メインオプション">
-                                  <option value="1" disabled>HP</option>
-                                  <option value="2" disabled>HP%</option>
-                                  <option value="3" selected>攻撃力</option>
-                                  <option value="4" disabled>攻撃力%</option>
-                                  <option value="5" disabled>防御力</option>
-                                  <option value="6" disabled>防御力％</option>
-                                  <option value="7" disabled>元素熟知</option>
-                                  <option value="8" disabled>元素チャージ効率</option>
-                                  <option value="9" disabled>会心率</option>
-                                  <option value="10" disabled>会心ダメージ</option>
-                                </select>
+                                <form action="/plume_mainop" id="plume-mainop" method="post">
+                                  <select class="form-select form-select-sm mainop save-state3" name="plume-mainop" form="insert_plume" data-savekey="plume-mainop" aria-label="メインオプション">
+                                    <option value="2" selected>攻撃力</option>
+                                  </select>
+                                </form>
                               </div>
-                              <div class="num">a</div>
+                              <div class="plume-mainop text-white"><%= plumesmainop[0][plumes[0].quality] %></div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -2436,170 +2422,172 @@
                     </div>
                     <div class="body-text">
                       <div class="container p-2">
-                        <form action="/insert_plume" method="post">
-                          <div class="row">
-                            <div class="col">
-                              <span class="badge text-bg-dark float-start">+20</span>
-                            </div>
-                            <div class="col">
-                              <div class="saveicon float-end">a</div>
+                        <div class="row">
+                          <div class="col">
+                            <span class="badge text-bg-dark float-start">+20</span>
+                          </div>
+                          <div class="col">
+                            <div class="saveicon float-end">
+                              <form action="/insert_plume" id="insert_plume" method="post">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                              </form>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col">
-                              <ul class="m-1">
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-plume-subop1">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop1" aria-expanded="false" aria-controls="collapse-plume-subop1">
-                                          <div class="plume-subop1"></div>
-                                          <div class="plume-subste1 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-plume-subop1" data-bs-parent="#accordion-plume-subop1">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="plume-subop1" form="insert_flower" data-subop-label="plume-subop1" data-savekey="plume-subop1" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste1" form="insert_flower" data-subste-label="plume-subste1" data-savekey="plume-subste1" aria-label="サブステータス">
-                                              </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <ul class="m-1">
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-plume-subop1">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop1" aria-expanded="false" aria-controls="collapse-plume-subop1">
+                                        <div class="plume-subop1"></div>
+                                        <div class="plume-subste1 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop1" data-bs-parent="#accordion-plume-subop1">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="plume-subop1" form="insert_plume" data-subop-label="plume-subop1" data-savekey="plume-subop1" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste1" form="insert_plume" data-subste-label="plume-subste1" data-savekey="plume-subste1" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-plume-subop2">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop2" aria-expanded="false" aria-controls="collapse-plume-subop2">
-                                          <div class="plume-subop2"></div>
-                                          <div class="plume-subste2 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-plume-subop2" data-bs-parent="#accordion-plume-subop2">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="plume-subop2" form="insert_flower" data-subop-label="plume-subop2" data-savekey="plume-subop2" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste2" form="insert_flower" data-subste-label="plume-subste2" data-savekey="plume-subste2" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-plume-subop2">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop2" aria-expanded="false" aria-controls="collapse-plume-subop2">
+                                        <div class="plume-subop2"></div>
+                                        <div class="plume-subste2 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop2" data-bs-parent="#accordion-plume-subop2">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="plume-subop2" form="insert_plume" data-subop-label="plume-subop2" data-savekey="plume-subop2" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste2" form="insert_plume" data-subste-label="plume-subste2" data-savekey="plume-subste2" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-plume-subop3">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop3" aria-expanded="false" aria-controls="collapse-plume-subop3">
-                                          <div class="plume-subop3"></div>
-                                          <div class="plume-subste3 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-plume-subop3" data-bs-parent="#accordion-plume-subop3">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="plume-subop3" form="insert_flower" data-subop-label="plume-subop3" data-savekey="plume-subop3" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste3" form="insert_flower" data-subste-label="plume-subste3" data-savekey="plume-subste3" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-plume-subop3">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop3" aria-expanded="false" aria-controls="collapse-plume-subop3">
+                                        <div class="plume-subop3"></div>
+                                        <div class="plume-subste3 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop3" data-bs-parent="#accordion-plume-subop3">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="plume-subop3" form="insert_plume" data-subop-label="plume-subop3" data-savekey="plume-subop3" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste3" form="insert_plume" data-subste-label="plume-subste3" data-savekey="plume-subste3" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-plume-subop4">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop4" aria-expanded="false" aria-controls="collapse-plume-subop4">
-                                          <div class="plume-subop4"></div>
-                                          <div class="plume-subste4 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-plume-subop4" data-bs-parent="#accordion-plume-subop4">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="plume-subop4" form="insert_flower" data-subop-label="plume-subop4" data-savekey="plume-subop4" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste4" form="insert_flower" data-subste-label="plume-subste4" data-savekey="plume-subste4" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-plume-subop4">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-plume-subop4" aria-expanded="false" aria-controls="collapse-plume-subop4">
+                                        <div class="plume-subop4"></div>
+                                        <div class="plume-subste4 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-plume-subop4" data-bs-parent="#accordion-plume-subop4">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="plume-subop4" form="insert_plume" data-subop-label="plume-subop4" data-savekey="plume-subop4" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="plume-subste4" form="insert_plume" data-subste-label="plume-subste4" data-savekey="plume-subste4" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                              </ul>
-                            </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                        </form>
+                        </div>
                         <div class="row">
                           <div class="col">
                             <%= plumes[0].name %>
@@ -2628,8 +2616,18 @@
                           <div class="container">
                             <div class="row ms-1">
                               <div class="partsname">a</div>
-                              <div class="status mt-4">a</div>
-                              <div class="num">a</div>
+                              <div class="status mt-4">
+                                <form action="/sands_mainop" id="sands-mainop" method="post">
+                                  <select class="form-select form-select-sm mainop save-state3" name="sands-mainop" form="insert_sands" data-savekey="sands-mainop" aria-label="メインオプション">
+                                    <option value="3">元素熟知</option>
+                                    <option value="4">HP%</option>
+                                    <option value="5" selected>攻撃力%</option>
+                                    <option value="13">防御力％</option>
+                                    <option value="15">元素チャージ効率</option>
+                                  </select>
+                                </form>
+                              </div>
+                              <div class="sands-mainop text-white"><%= sandsmainop[0][sands[0].quality] %></div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -2877,170 +2875,172 @@
                     </div>
                     <div class="body-text">
                       <div class="container p-2">
-                        <form action="/insert_sands" method="post">
-                          <div class="row">
-                            <div class="col">
-                              <span class="badge text-bg-dark float-start">+20</span>
-                            </div>
-                            <div class="col">
-                              <div class="saveicon float-end">a</div>
+                        <div class="row">
+                          <div class="col">
+                            <span class="badge text-bg-dark float-start">+20</span>
+                          </div>
+                          <div class="col">
+                            <div class="saveicon float-end">
+                              <form action="/insert_sands" id="insert_sands" method="post">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                              </form>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col">
-                              <ul class="m-1">
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-sands-subop1">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop1" aria-expanded="false" aria-controls="collapse-sands-subop1">
-                                          <div class="sands-subop1"></div>
-                                          <div class="sands-subste1 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-sands-subop1" data-bs-parent="#accordion-sands-subop1">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="sands-subop1" form="insert_flower" data-subop-label="sands-subop1" data-savekey="sands-subop1" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste1" form="insert_flower" data-subste-label="sands-subste1" data-savekey="sands-subste1" aria-label="サブステータス">
-                                              </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <ul class="m-1">
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-sands-subop1">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop1" aria-expanded="false" aria-controls="collapse-sands-subop1">
+                                        <div class="sands-subop1"></div>
+                                        <div class="sands-subste1 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop1" data-bs-parent="#accordion-sands-subop1">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="sands-subop1" form="insert_sands" data-subop-label="sands-subop1" data-savekey="sands-subop1" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste1" form="insert_sands" data-subste-label="sands-subste1" data-savekey="sands-subste1" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-sands-subop2">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop2" aria-expanded="false" aria-controls="collapse-sands-subop2">
-                                          <div class="sands-subop2"></div>
-                                          <div class="sands-subste2 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-sands-subop2" data-bs-parent="#accordion-sands-subop2">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="sands-subop2" form="insert_flower" data-subop-label="sands-subop2" data-savekey="sands-subop2" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste2" form="insert_flower" data-subste-label="sands-subste2" data-savekey="sands-subste2" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-sands-subop2">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop2" aria-expanded="false" aria-controls="collapse-sands-subop2">
+                                        <div class="sands-subop2"></div>
+                                        <div class="sands-subste2 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop2" data-bs-parent="#accordion-sands-subop2">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="sands-subop2" form="insert_sands" data-subop-label="sands-subop2" data-savekey="sands-subop2" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste2" form="insert_sands" data-subste-label="sands-subste2" data-savekey="sands-subste2" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-sands-subop3">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop3" aria-expanded="false" aria-controls="collapse-sands-subop3">
-                                          <div class="sands-subop3"></div>
-                                          <div class="sands-subste3 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-sands-subop3" data-bs-parent="#accordion-sands-subop3">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="sands-subop3" form="insert_flower" data-subop-label="sands-subop3" data-savekey="sands-subop3" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste3" form="insert_flower" data-subste-label="sands-subste3" data-savekey="sands-subste3" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-sands-subop3">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop3" aria-expanded="false" aria-controls="collapse-sands-subop3">
+                                        <div class="sands-subop3"></div>
+                                        <div class="sands-subste3 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop3" data-bs-parent="#accordion-sands-subop3">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="sands-subop3" form="insert_sands" data-subop-label="sands-subop3" data-savekey="sands-subop3" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste3" form="insert_sands" data-subste-label="sands-subste3" data-savekey="sands-subste3" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-sands-subop4">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop4" aria-expanded="false" aria-controls="collapse-sands-subop4">
-                                          <div class="sands-subop4"></div>
-                                          <div class="sands-subste4 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-sands-subop4" data-bs-parent="#accordion-sands-subop4">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="sands-subop4" form="insert_flower" data-subop-label="sands-subop4" data-savekey="sands-subop4" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste4" form="insert_flower" data-subste-label="sands-subste4" data-savekey="sands-subste4" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-sands-subop4">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-sands-subop4" aria-expanded="false" aria-controls="collapse-sands-subop4">
+                                        <div class="sands-subop4"></div>
+                                        <div class="sands-subste4 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-sands-subop4" data-bs-parent="#accordion-sands-subop4">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="sands-subop4" form="insert_sands" data-subop-label="sands-subop4" data-savekey="sands-subop4" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="sands-subste4" form="insert_sands" data-subste-label="sands-subste4" data-savekey="sands-subste4" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                              </ul>
-                            </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                        </form>
+                        </div>
                         <div class="row">
                           <div class="col">
                             <%= sands[0].name %>
@@ -3069,8 +3069,25 @@
                           <div class="container">
                             <div class="row ms-1">
                               <div class="partsname">a</div>
-                              <div class="status mt-4">a</div>
-                              <div class="num">a</div>
+                              <div class="status mt-4">
+                                <form action="/goblet_mainop" id="goblet-mainop" method="post">
+                                  <select class="form-select form-select-sm mainop save-state3" name="goblet-mainop" form="insert_goblet" data-savekey="goblet-mainop" aria-label="メインオプション">
+                                    <option value="3">元素熟知</option>
+                                    <option value="4">HP%</option>
+                                    <option value="5">攻撃力%</option>
+                                    <option value="6">炎元素ダメージ</option>
+                                    <option value="7">水元素ダメージ</option>
+                                    <option value="8" selected>氷元素ダメージ</option>
+                                    <option value="9">雷元素ダメージ</option>
+                                    <option value="10">風元素ダメージ</option>
+                                    <option value="11">岩元素ダメージ</option>
+                                    <option value="12">草元素ダメージ</option>
+                                    <option value="13">防御力％</option>
+                                    <option value="14">物理ダメージ</option>
+                                  </select>
+                                </form>
+                              </div>
+                              <div class="goblet-mainop text-white"><%= gobletsmainop[0][goblets[0].quality] %></div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -3318,170 +3335,172 @@
                     </div>
                     <div class="body-text">
                       <div class="container p-2">
-                        <form action="/insert_goblet" method="post">
-                          <div class="row">
-                            <div class="col">
-                              <span class="badge text-bg-dark float-start">+20</span>
-                            </div>
-                            <div class="col">
-                              <div class="saveicon float-end">a</div>
+                        <div class="row">
+                          <div class="col">
+                            <span class="badge text-bg-dark float-start">+20</span>
+                          </div>
+                          <div class="col">
+                            <div class="saveicon float-end">
+                              <form action="/insert_goblet" id="insert_goblet" method="post">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                              </form>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col">
-                              <ul class="m-1">
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-goblet-subop1">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop1" aria-expanded="false" aria-controls="collapse-goblet-subop1">
-                                          <div class="goblet-subop1"></div>
-                                          <div class="goblet-subste1 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-goblet-subop1" data-bs-parent="#accordion-goblet-subop1">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="goblet-subop1" form="insert_flower" data-subop-label="goblet-subop1" data-savekey="goblet-subop1" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste1" form="insert_flower" data-subste-label="goblet-subste1" data-savekey="goblet-subste1" aria-label="サブステータス">
-                                              </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <ul class="m-1">
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop1">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop1" aria-expanded="false" aria-controls="collapse-goblet-subop1">
+                                        <div class="goblet-subop1"></div>
+                                        <div class="goblet-subste1 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop1" data-bs-parent="#accordion-goblet-subop1">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="goblet-subop1" form="insert_goblet" data-subop-label="goblet-subop1" data-savekey="goblet-subop1" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste1" form="insert_goblet" data-subste-label="goblet-subste1" data-savekey="goblet-subste1" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-goblet-subop2">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop2" aria-expanded="false" aria-controls="collapse-goblet-subop2">
-                                          <div class="goblet-subop2"></div>
-                                          <div class="goblet-subste2 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-goblet-subop2" data-bs-parent="#accordion-goblet-subop2">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="goblet-subop2" form="insert_flower" data-subop-label="goblet-subop2" data-savekey="goblet-subop2" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste2" form="insert_flower" data-subste-label="goblet-subste2" data-savekey="goblet-subste2" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop2">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop2" aria-expanded="false" aria-controls="collapse-goblet-subop2">
+                                        <div class="goblet-subop2"></div>
+                                        <div class="goblet-subste2 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop2" data-bs-parent="#accordion-goblet-subop2">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="goblet-subop2" form="insert_goblet" data-subop-label="goblet-subop2" data-savekey="goblet-subop2" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste2" form="insert_goblet" data-subste-label="goblet-subste2" data-savekey="goblet-subste2" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-goblet-subop3">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop3" aria-expanded="false" aria-controls="collapse-goblet-subop3">
-                                          <div class="goblet-subop3"></div>
-                                          <div class="goblet-subste3 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-goblet-subop3" data-bs-parent="#accordion-goblet-subop3">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="goblet-subop3" form="insert_flower" data-subop-label="goblet-subop3" data-savekey="goblet-subop3" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste3" form="insert_flower" data-subste-label="goblet-subste3" data-savekey="goblet-subste3" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop3">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop3" aria-expanded="false" aria-controls="collapse-goblet-subop3">
+                                        <div class="goblet-subop3"></div>
+                                        <div class="goblet-subste3 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop3" data-bs-parent="#accordion-goblet-subop3">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="goblet-subop3" form="insert_goblet" data-subop-label="goblet-subop3" data-savekey="goblet-subop3" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste3" form="insert_goblet" data-subste-label="goblet-subste3" data-savekey="goblet-subste3" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-goblet-subop4">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop4" aria-expanded="false" aria-controls="collapse-goblet-subop4">
-                                          <div class="goblet-subop4"></div>
-                                          <div class="goblet-subste4 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-goblet-subop4" data-bs-parent="#accordion-goblet-subop4">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="goblet-subop4" form="insert_flower" data-subop-label="goblet-subop4" data-savekey="goblet-subop4" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste4" form="insert_flower" data-subste-label="goblet-subste4" data-savekey="goblet-subste4" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-goblet-subop4">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-goblet-subop4" aria-expanded="false" aria-controls="collapse-goblet-subop4">
+                                        <div class="goblet-subop4"></div>
+                                        <div class="goblet-subste4 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-goblet-subop4" data-bs-parent="#accordion-goblet-subop4">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="goblet-subop4" form="insert_goblet" data-subop-label="goblet-subop4" data-savekey="goblet-subop4" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="goblet-subste4" form="insert_goblet" data-subste-label="goblet-subste4" data-savekey="goblet-subste4" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                              </ul>
-                            </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                        </form>
+                        </div>
                         <div class="row">
                           <div class="col">
                             <%= goblets[0].name %>
@@ -3510,8 +3529,20 @@
                           <div class="container">
                             <div class="row ms-1">
                               <div class="partsname">a</div>
-                              <div class="status mt-4">a</div>
-                              <div class="num">a</div>
+                              <div class="status mt-4">
+                                <form action="/circlet_mainop" id="circlet-mainop" method="post">
+                                  <select class="form-select form-select-sm mainop save-state3" name="circlet-mainop" form="insert_circlet" data-savekey="circlet-mainop" aria-label="メインオプション">
+                                    <option value="3">元素熟知</option>
+                                    <option value="4">HP%</option>
+                                    <option value="5">攻撃力%</option>
+                                    <option value="13">防御力％</option>
+                                    <option value="16">会心率</option>
+                                    <option value="17" selected>会心ダメージ</option>
+                                    <option value="18">与える治療効果</option>
+                                  </select>
+                                </form>
+                              </div>
+                              <div class="circlet-mainop text-white"><%= circletsmainop[0][circlets[0].quality] %></div>
                               <div class="quality" style="color: rgb(255, 225, 56);">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
@@ -3759,170 +3790,172 @@
                     </div>
                     <div class="body-text">
                       <div class="container p-2">
-                        <form action="/insert_circlet" method="post">
-                          <div class="row">
-                            <div class="col">
-                              <span class="badge text-bg-dark float-start">+20</span>
-                            </div>
-                            <div class="col">
-                              <div class="saveicon float-end">a</div>
+                        <div class="row">
+                          <div class="col">
+                            <span class="badge text-bg-dark float-start">+20</span>
+                          </div>
+                          <div class="col">
+                            <div class="saveicon float-end">
+                              <form action="/insert_circlet" id="insert_circlet" method="post">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                              </form>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col">
-                              <ul class="m-1">
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-circlet-subop1">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop1" aria-expanded="false" aria-controls="collapse-circlet-subop1">
-                                          <div class="circlet-subop1"></div>
-                                          <div class="circlet-subste1 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-circlet-subop1" data-bs-parent="#accordion-circlet-subop1">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="circlet-subop1" form="insert_flower" data-subop-label="circlet-subop1" data-savekey="circlet-subop1" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste1" form="insert_flower" data-subste-label="circlet-subste1" data-savekey="circlet-subste1" aria-label="サブステータス">
-                                              </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <ul class="m-1">
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop1">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop1" aria-expanded="false" aria-controls="collapse-circlet-subop1">
+                                        <div class="circlet-subop1"></div>
+                                        <div class="circlet-subste1 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop1" data-bs-parent="#accordion-circlet-subop1">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="circlet-subop1" form="insert_circlet" data-subop-label="circlet-subop1" data-savekey="circlet-subop1" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste1" form="insert_circlet" data-subste-label="circlet-subste1" data-savekey="circlet-subste1" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-circlet-subop2">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop2" aria-expanded="false" aria-controls="collapse-circlet-subop2">
-                                          <div class="circlet-subop2"></div>
-                                          <div class="circlet-subste2 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-circlet-subop2" data-bs-parent="#accordion-circlet-subop2">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="circlet-subop2" form="insert_flower" data-subop-label="circlet-subop2" data-savekey="circlet-subop2" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste2" form="insert_flower" data-subste-label="circlet-subste2" data-savekey="circlet-subste2" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop2">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop2" aria-expanded="false" aria-controls="collapse-circlet-subop2">
+                                        <div class="circlet-subop2"></div>
+                                        <div class="circlet-subste2 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop2" data-bs-parent="#accordion-circlet-subop2">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="circlet-subop2" form="insert_circlet" data-subop-label="circlet-subop2" data-savekey="circlet-subop2" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste2" form="insert_circlet" data-subste-label="circlet-subste2" data-savekey="circlet-subste2" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-circlet-subop3">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop3" aria-expanded="false" aria-controls="collapse-circlet-subop3">
-                                          <div class="circlet-subop3"></div>
-                                          <div class="circlet-subste3 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-circlet-subop3" data-bs-parent="#accordion-circlet-subop3">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="circlet-subop3" form="insert_flower" data-subop-label="circlet-subop3" data-savekey="circlet-subop3" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste3" form="insert_flower" data-subste-label="circlet-subste3" data-savekey="circlet-subste3" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop3">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop3" aria-expanded="false" aria-controls="collapse-circlet-subop3">
+                                        <div class="circlet-subop3"></div>
+                                        <div class="circlet-subste3 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop3" data-bs-parent="#accordion-circlet-subop3">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="circlet-subop3" form="insert_circlet" data-subop-label="circlet-subop3" data-savekey="circlet-subop3" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste3" form="insert_circlet" data-subste-label="circlet-subste3" data-savekey="circlet-subste3" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div class="accordion accordion-flush" id="accordion-circlet-subop4">
-                                    <div class="accordion-item">
-                                      <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop4" aria-expanded="false" aria-controls="collapse-circlet-subop4">
-                                          <div class="circlet-subop4"></div>
-                                          <div class="circlet-subste4 ms-2"></div>
-                                        </button>
-                                      </h2>
-                                      <div class="accordion-collapse collapse" id="collapse-circlet-subop4" data-bs-parent="#accordion-circlet-subop4">
-                                        <div class="accordion-body p-2">
-                                          <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <select class="form-select form-select-sm subop save-state3" name="circlet-subop4" form="insert_flower" data-subop-label="circlet-subop4" data-savekey="circlet-subop4" aria-label="サブオプション">
-                                                  <option value="1">HP</option>
-                                                  <option value="2">HP%</option>
-                                                  <option value="3">攻撃力</option>
-                                                  <option value="4" selected>攻撃力%</option>
-                                                  <option value="5">防御力</option>
-                                                  <option value="6">防御力％</option>
-                                                  <option value="7">元素熟知</option>
-                                                  <option value="8">元素チャージ効率</option>
-                                                  <option value="9">会心率</option>
-                                                  <option value="10">会心ダメージ</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste4" form="insert_flower" data-subste-label="circlet-subste4" data-savekey="circlet-subste4" aria-label="サブステータス">
-                                              </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="accordion accordion-flush" id="accordion-circlet-subop4">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed pt-1 pb-1" data-bs-toggle="collapse" data-bs-target="#collapse-circlet-subop4" aria-expanded="false" aria-controls="collapse-circlet-subop4">
+                                        <div class="circlet-subop4"></div>
+                                        <div class="circlet-subste4 ms-2"></div>
+                                      </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="collapse-circlet-subop4" data-bs-parent="#accordion-circlet-subop4">
+                                      <div class="accordion-body p-2">
+                                        <div class="container">
+                                          <div class="row row-cols-2">
+                                            <div class="col">
+                                              <select class="form-select form-select-sm subop save-state3" name="circlet-subop4" form="insert_circlet" data-subop-label="circlet-subop4" data-savekey="circlet-subop4" aria-label="サブオプション">
+                                                <option value="1">HP</option>
+                                                <option value="2">HP%</option>
+                                                <option value="3">攻撃力</option>
+                                                <option value="4" selected>攻撃力%</option>
+                                                <option value="5">防御力</option>
+                                                <option value="6">防御力％</option>
+                                                <option value="7">元素熟知</option>
+                                                <option value="8">元素チャージ効率</option>
+                                                <option value="9">会心率</option>
+                                                <option value="10">会心ダメージ</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" class="form-control form-control-sm subste save-state2" value="0" step="0.1" name="circlet-subste4" form="insert_circlet" data-subste-label="circlet-subste4" data-savekey="circlet-subste4" aria-label="サブステータス">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </li>
-                              </ul>
-                            </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                        </form>
+                        </div>
                         <div class="row">
                           <div class="col">
                             <%= circlets[0].name %>

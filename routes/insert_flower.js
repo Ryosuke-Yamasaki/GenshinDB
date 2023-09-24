@@ -4,6 +4,7 @@ const knex = require('../db/knex');
 
 router.post('/', function (req, res) {
   const userId = req.user.id;
+  console.log(req.body);
   knex("damage_myset")
     .select("flowers_id")
     .then(function (damage) {
