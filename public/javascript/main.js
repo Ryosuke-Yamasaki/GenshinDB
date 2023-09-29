@@ -1,97 +1,19 @@
-//HP
-const ele_baseHP = document.querySelector(".base-hp");
-const ele_bonusHP = document.querySelector(".bonus-hp");
-const ele_totalHP = document.querySelector(".total-hp");
-const baseHP = parseFloat(ele_baseHP.textContent);
-const bonusHP = parseFloat(ele_bonusHP.textContent);
-const totalHP = baseHP + bonusHP;
-ele_baseHP.textContent = baseHP;
-ele_bonusHP.textContent = bonusHP;
-ele_totalHP.textContent = totalHP;
-
-
-//ATK
-const ele_baseATK = document.querySelector(".base-atk");
-const ele_bonusATK = document.querySelector(".bonus-atk");
-const ele_totalATK = document.querySelector(".total-atk");
-const baseATK = parseFloat(ele_baseATK.textContent);
-const bonusATK = parseFloat(ele_bonusATK.textContent);
-const totalATK = baseATK + bonusATK;
-ele_baseATK.textContent = baseATK;
-ele_bonusATK.textContent = bonusATK;
-ele_totalATK.textContent = totalATK;
-
-
-//DEF
-const ele_baseDEF = document.querySelector(".base-def");
-const ele_bonusDEF = document.querySelector(".bonus-def");
-const ele_totalDEF = document.querySelector(".total-def");
-const baseDEF = parseFloat(ele_baseDEF.textContent);
-const bonusDEF = parseFloat(ele_bonusDEF.textContent);
-const totalDEF = baseDEF + bonusDEF;
-ele_baseDEF.textContent = baseDEF;
-ele_bonusDEF.textContent = bonusDEF;
-ele_totalDEF.textContent = totalDEF;
-
-
-//EM
-const ele_baseEM = document.querySelector(".base-em");
-const ele_bonusEM = document.querySelector(".bonus-em");
-const ele_totalEM = document.querySelector(".total-em");
-const baseEM = parseFloat(ele_baseEM.textContent);
-const bonusEM = parseFloat(ele_bonusEM.textContent);
-const totalEM = baseEM + bonusEM;
-ele_baseEM.textContent = baseEM;
-ele_bonusEM.textContent = bonusEM;
-ele_totalEM.textContent = totalEM;
-
-
-//ER
-const ele_baseER = document.querySelector(".base-er");
-const ele_bonusER = document.querySelector(".bonus-er");
-const ele_totalER = document.querySelector(".total-er");
-const baseER = parseFloat(ele_baseER.textContent);
-const bonusER = parseFloat(ele_bonusER.textContent);
-const totalER = baseER + bonusER;
-ele_baseER.textContent = baseER;
-ele_bonusER.textContent = bonusER;
-ele_totalER.textContent = totalER;
-
-
-//CR
-const ele_baseCR = document.querySelector(".base-cr");
-const ele_bonusCR = document.querySelector(".bonus-cr");
-const ele_totalCR = document.querySelector(".total-cr");
-const baseCR = parseFloat(ele_baseCR.textContent);
-const bonusCR = parseFloat(ele_bonusCR.textContent);
-const totalCR = baseCR + bonusCR;
-ele_baseCR.textContent = baseCR;
-ele_bonusCR.textContent = bonusCR;
-ele_totalCR.textContent = totalCR;
-
-
-//CD
-const ele_baseCD = document.querySelector(".base-cd");
-const ele_bonusCD = document.querySelector(".bonus-cd");
-const ele_totalCD = document.querySelector(".total-cd");
-const baseCD = parseFloat(ele_baseCD.textContent);
-const bonusCD = parseFloat(ele_bonusCD.textContent);
-const totalCD = baseCD + bonusCD;
-ele_baseCD.textContent = baseCD;
-ele_bonusCD.textContent = bonusCD;
-ele_totalCD.textContent = totalCD;
-
-
 //各ステータスの宣言
-const pyro_db = 0;
-const hydro_db = 0;
-const cryo_db = 0;
-const electro_db = 0;
-const anemo_db = 0;
-const geo_db = 0;
-const dendro_db = 0;
-const physical_db = 0;
-
+let hp = [];
+let atk = [];
+let def = [];
+let em = [];
+let er = [];
+let cr = [];
+let cd = [];
+let pyro_db = [];
+let hydro_db = [];
+let cryo_db = [];
+let electro_db = [];
+let anemo_db = [];
+let geo_db = [];
+let dendro_db = [];
+let physical_db = [];
 
 
 //攻撃倍率
@@ -344,4 +266,127 @@ window.addEventListener('DOMContentLoaded', function () {
       ele_subSTE.textContent = "+" + subSTE[i].value;
     })
   }
+
+
+  //命ノ星座の効果
+
+  let con_list = document.querySelectorAll(".constellation");
+  for (let con_lists of con_list) {
+    con_lists.addEventListener('change', function () {
+      let con_id = con_lists.id.substring(14);
+      if (con_lists.checked) {
+        if (con_id == 2) {
+          let CR = { name: con_lists.id, num: 0.1 }
+          cr.push(CR);
+        }
+      } else {
+        if (con_id == 2) {
+          console.log(cr.name);
+          if (cr.name == con_lists.id) {
+          }
+        }
+      }
+      /*for (let i = 0; i < con_list.length; i++) {
+        let con_id = con_list[i].id.substring(14);
+        console.log(con_lists.id);
+        if (con_lists.checked) {
+          if (con_id == 2) {
+            cr = 0.1;
+            console.log(cr);
+          }
+        } else if (!con_lists.checked) {
+          if (con_id == 2) {
+            cr = 0.1;
+            console.log(cr);
+          }
+        }
+      }*/
+    });
+  }
+
+
+  window.addEventListener('change', function () {
+    //HP
+    let ele_baseHP = document.querySelector(".base-hp");
+    let ele_bonusHP = document.querySelector(".bonus-hp");
+    let ele_totalHP = document.querySelector(".total-hp");
+    let baseHP = parseFloat(ele_baseHP.textContent);
+    let bonusHP = hp.reduce((sum, element) => sum + element, 0);
+    let totalHP = baseHP + bonusHP;
+    ele_baseHP.textContent = baseHP;
+    ele_bonusHP.textContent = bonusHP;
+    ele_totalHP.textContent = totalHP;
+
+
+    //ATK
+    let ele_baseATK = document.querySelector(".base-atk");
+    let ele_bonusATK = document.querySelector(".bonus-atk");
+    let ele_totalATK = document.querySelector(".total-atk");
+    let baseATK = parseFloat(ele_baseATK.textContent);
+    let bonusATK = atk.reduce((sum, element) => sum + element, 0);
+    let totalATK = baseATK + bonusATK;
+    ele_baseATK.textContent = baseATK;
+    ele_bonusATK.textContent = bonusATK;
+    ele_totalATK.textContent = totalATK;
+
+
+    //DEF
+    let ele_baseDEF = document.querySelector(".base-def");
+    let ele_bonusDEF = document.querySelector(".bonus-def");
+    let ele_totalDEF = document.querySelector(".total-def");
+    let baseDEF = parseFloat(ele_baseDEF.textContent);
+    let bonusDEF = def.reduce((sum, element) => sum + element, 0);
+    let totalDEF = baseDEF + bonusDEF;
+    ele_baseDEF.textContent = baseDEF;
+    ele_bonusDEF.textContent = bonusDEF;
+    ele_totalDEF.textContent = totalDEF;
+
+
+    //EM
+    let ele_baseEM = document.querySelector(".base-em");
+    let ele_bonusEM = document.querySelector(".bonus-em");
+    let ele_totalEM = document.querySelector(".total-em");
+    let baseEM = parseFloat(ele_baseEM.textContent);
+    let bonusEM = em.reduce((sum, element) => sum + element, 0);
+    let totalEM = baseEM + bonusEM;
+    ele_baseEM.textContent = baseEM;
+    ele_bonusEM.textContent = bonusEM;
+    ele_totalEM.textContent = totalEM;
+
+
+    //ER
+    let ele_baseER = document.querySelector(".base-er");
+    let ele_bonusER = document.querySelector(".bonus-er");
+    let ele_totalER = document.querySelector(".total-er");
+    let baseER = parseFloat(ele_baseER.textContent);
+    let bonusER = er.reduce((sum, element) => sum + element, 0);
+    let totalER = baseER + bonusER;
+    ele_baseER.textContent = baseER;
+    ele_bonusER.textContent = bonusER;
+    ele_totalER.textContent = totalER;
+
+
+    //CR
+    let ele_baseCR = document.querySelector(".base-cr");
+    let ele_bonusCR = document.querySelector(".bonus-cr");
+    let ele_totalCR = document.querySelector(".total-cr");
+    let baseCR = parseFloat(ele_baseCR.textContent);
+    let bonusCR = cr.reduce((sum, element) => sum + element, 0);
+    let totalCR = baseCR + bonusCR;
+    ele_baseCR.textContent = baseCR;
+    ele_bonusCR.textContent = bonusCR;
+    ele_totalCR.textContent = totalCR;
+
+
+    //CD
+    let ele_baseCD = document.querySelector(".base-cd");
+    let ele_bonusCD = document.querySelector(".bonus-cd");
+    let ele_totalCD = document.querySelector(".total-cd");
+    let baseCD = parseFloat(ele_baseCD.textContent);
+    let bonusCD = cd.reduce((sum, element) => sum + element, 0);
+    let totalCD = baseCD + bonusCD;
+    ele_baseCD.textContent = baseCD;
+    ele_bonusCD.textContent = bonusCD;
+    ele_totalCD.textContent = totalCD;
+  });
 });
